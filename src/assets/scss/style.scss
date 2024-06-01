@@ -1,0 +1,45 @@
+// @import 'vendor/reset';
+@import 'blocks/vars';
+@import 'mixins';
+// @import "./vendor/animate";
+
+
+@import 'fonts';
+@import 'settings';
+
+
+html,body{
+  height: 100%;
+   margin: 0;
+   font-family: var(--font-family);
+   font-weight: 400;
+   color: var(--text-color);
+}
+
+.main{
+  height: 100%;
+  flex: 1 0 auto; 
+}
+
+// ======blocks=========
+
+@import 'blocks/container';
+@import 'blocks/page';
+@import 'blocks/header';
+@import 'blocks/hero';
+@import 'blocks/about';
+@import 'blocks/video';
+@import 'blocks/salut';
+@import 'blocks/life';
+@import 'blocks/order';
+@import 'blocks/mission';
+@import 'blocks/works';
+@import 'blocks/news';
+@import 'blocks/contact';
+@import 'blocks/footer';
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+.order {
+    &>.container>.grid-row {
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    }
+
+    & .project__title {
+        max-width: 435px;
+        display: block;
+    }
+}
+
+.order__form {
+
+    &>p {
+        font-size: 17px;
+        color: #404040;
+        margin-bottom: 40px;
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 16px;
+    }
+
+    & .project__input{
+        width: 100%;
+    }
+}
+
+.order__form__submit {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  
+    & p {
+      font-size: 15px;
+      color: #9c9c9c;
+    }
+  }

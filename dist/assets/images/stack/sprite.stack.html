@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-about--Frame-dims { width: 46px; height: 44px; }
+ .svg-about--Frame2-dims { width: 43px; height: 44px; }
+ .svg-contacts--Vector-dims { width: 16px; height: 20px; }
+ .svg-contacts--Vectortel-dims { width: 20px; height: 20px; }
+ .svg-contacts--Vectortime-dims { width: 21px; height: 20px; }
+ .svg-contacts--Vectorvk-dims { width: 27px; height: 16px; }
+ .svg-contacts--globe-dims { width: 24px; height: 24px; }
+ .svg-contacts--mail-dims { width: 24px; height: 24px; }
+ .svg-footer--Framevk-dims { width: 27px; height: 16px; }
+ .svg-footer--TG-dims { width: 24px; height: 21px; }
+ .svg-footer--u_map-marker-dims { width: 24px; height: 24px; }
+ .svg-footer--u_phone-alt-dims { width: 24px; height: 24px; }
+ .svg-footer--youtube-dims { width: 24px; height: 24px; }
+ .svg-footer--СФО-dims { width: 125px; height: 42px; }
+ .svg-life--1@4x_(1)_2-dims { width: 112px; height: 31px; }
+ .svg-life--logo_3-dims { width: 72px; height: 62px; }
+ .svg-life--logo_4-dims { width: 122px; height: 31px; }
+ .svg-life--logo_header_4-dims { width: 107px; height: 28px; }
+ .svg-main-hero--company2-dims { width: 194px; height: 54px; }
+ .svg-main-hero--company3-dims { width: 190px; height: 49px; }
+ .svg-main-hero--company4-dims { width: 135px; height: 116px; }
+ .svg-main-hero--logo_header1-dims { width: 204px; height: 54px; }
+ .svg-main-hero--next-dims { width: 47px; height: 54px; }
+ .svg-main-hero--prev-dims { width: 30px; height: 30px; }
+ .svg-mission--Frame-dims { width: 34px; height: 41px; }
+ .svg-mission--Frame3-dims { width: 36px; height: 29px; }
+ .svg-mission--Frame4-dims { width: 31px; height: 29px; }
+ .svg-mission--_РЎР»РѕР№_1-dims { width: 29px; height: 37px; }
+ .svg-salut--arrow-right-dims { width: 69px; height: 52px; }
+ .svg-video--Polygon1-dims { width: 31px; height: 36px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="about--Frame">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--Frame" class="svg-about--Frame-dims" alt="about--Frame">
+                    </div>
+                    <h2>about--Frame, </h2>
+                </li>
+             <li title="about--Frame2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--Frame2" class="svg-about--Frame2-dims" alt="about--Frame2">
+                    </div>
+                    <h2>about--Frame2, </h2>
+                </li>
+             <li title="contacts--Vector">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contacts--Vector" class="svg-contacts--Vector-dims" alt="contacts--Vector">
+                    </div>
+                    <h2>contacts--Vector, </h2>
+                </li>
+             <li title="contacts--Vectortel">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contacts--Vectortel" class="svg-contacts--Vectortel-dims" alt="contacts--Vectortel">
+                    </div>
+                    <h2>contacts--Vectortel, </h2>
+                </li>
+             <li title="contacts--Vectortime">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contacts--Vectortime" class="svg-contacts--Vectortime-dims" alt="contacts--Vectortime">
+                    </div>
+                    <h2>contacts--Vectortime, </h2>
+                </li>
+             <li title="contacts--Vectorvk">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contacts--Vectorvk" class="svg-contacts--Vectorvk-dims" alt="contacts--Vectorvk">
+                    </div>
+                    <h2>contacts--Vectorvk, </h2>
+                </li>
+             <li title="contacts--globe">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contacts--globe" class="svg-contacts--globe-dims" alt="contacts--globe">
+                    </div>
+                    <h2>contacts--globe, </h2>
+                </li>
+             <li title="contacts--mail">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#contacts--mail" class="svg-contacts--mail-dims" alt="contacts--mail">
+                    </div>
+                    <h2>contacts--mail, </h2>
+                </li>
+             <li title="footer--Framevk">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--Framevk" class="svg-footer--Framevk-dims" alt="footer--Framevk">
+                    </div>
+                    <h2>footer--Framevk, </h2>
+                </li>
+             <li title="footer--TG">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--TG" class="svg-footer--TG-dims" alt="footer--TG">
+                    </div>
+                    <h2>footer--TG, </h2>
+                </li>
+             <li title="footer--u_map-marker">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--u_map-marker" class="svg-footer--u_map-marker-dims" alt="footer--u_map-marker">
+                    </div>
+                    <h2>footer--u_map-marker, </h2>
+                </li>
+             <li title="footer--u_phone-alt">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--u_phone-alt" class="svg-footer--u_phone-alt-dims" alt="footer--u_phone-alt">
+                    </div>
+                    <h2>footer--u_phone-alt, </h2>
+                </li>
+             <li title="footer--youtube">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--youtube" class="svg-footer--youtube-dims" alt="footer--youtube">
+                    </div>
+                    <h2>footer--youtube, </h2>
+                </li>
+             <li title="footer--СФО">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--СФО" class="svg-footer--СФО-dims" alt="footer--СФО">
+                    </div>
+                    <h2>footer--СФО, </h2>
+                </li>
+             <li title="life--1@4x_(1)_2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#life--1@4x_(1)_2" class="svg-life--1@4x_(1)_2-dims" alt="life--1@4x_(1)_2">
+                    </div>
+                    <h2>life--1@4x_(1)_2, </h2>
+                </li>
+             <li title="life--logo_3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#life--logo_3" class="svg-life--logo_3-dims" alt="life--logo_3">
+                    </div>
+                    <h2>life--logo_3, </h2>
+                </li>
+             <li title="life--logo_4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#life--logo_4" class="svg-life--logo_4-dims" alt="life--logo_4">
+                    </div>
+                    <h2>life--logo_4, </h2>
+                </li>
+             <li title="life--logo_header_4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#life--logo_header_4" class="svg-life--logo_header_4-dims" alt="life--logo_header_4">
+                    </div>
+                    <h2>life--logo_header_4, </h2>
+                </li>
+             <li title="main-hero--company2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#main-hero--company2" class="svg-main-hero--company2-dims" alt="main-hero--company2">
+                    </div>
+                    <h2>main-hero--company2, </h2>
+                </li>
+             <li title="main-hero--company3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#main-hero--company3" class="svg-main-hero--company3-dims" alt="main-hero--company3">
+                    </div>
+                    <h2>main-hero--company3, </h2>
+                </li>
+             <li title="main-hero--company4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#main-hero--company4" class="svg-main-hero--company4-dims" alt="main-hero--company4">
+                    </div>
+                    <h2>main-hero--company4, </h2>
+                </li>
+             <li title="main-hero--logo_header1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#main-hero--logo_header1" class="svg-main-hero--logo_header1-dims" alt="main-hero--logo_header1">
+                    </div>
+                    <h2>main-hero--logo_header1, </h2>
+                </li>
+             <li title="main-hero--next">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#main-hero--next" class="svg-main-hero--next-dims" alt="main-hero--next">
+                    </div>
+                    <h2>main-hero--next, </h2>
+                </li>
+             <li title="main-hero--prev">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#main-hero--prev" class="svg-main-hero--prev-dims" alt="main-hero--prev">
+                    </div>
+                    <h2>main-hero--prev, </h2>
+                </li>
+             <li title="mission--Frame">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#mission--Frame" class="svg-mission--Frame-dims" alt="mission--Frame">
+                    </div>
+                    <h2>mission--Frame, </h2>
+                </li>
+             <li title="mission--Frame3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#mission--Frame3" class="svg-mission--Frame3-dims" alt="mission--Frame3">
+                    </div>
+                    <h2>mission--Frame3, </h2>
+                </li>
+             <li title="mission--Frame4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#mission--Frame4" class="svg-mission--Frame4-dims" alt="mission--Frame4">
+                    </div>
+                    <h2>mission--Frame4, </h2>
+                </li>
+             <li title="mission--_РЎР»РѕР№_1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#mission--_РЎР»РѕР№_1" class="svg-mission--_РЎР»РѕР№_1-dims" alt="mission--_РЎР»РѕР№_1">
+                    </div>
+                    <h2>mission--_РЎР»РѕР№_1, </h2>
+                </li>
+             <li title="salut--arrow-right">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#salut--arrow-right" class="svg-salut--arrow-right-dims" alt="salut--arrow-right">
+                    </div>
+                    <h2>salut--arrow-right, </h2>
+                </li>
+             <li title="video--Polygon1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#video--Polygon1" class="svg-video--Polygon1-dims" alt="video--Polygon1">
+                    </div>
+                    <h2>video--Polygon1, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Sat, 01 Jun 2024 00:09:04 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
