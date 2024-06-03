@@ -1,46 +1,54 @@
+.header {
+    padding: 30px 0;
+    background-color: #fff;
+}
+
 .header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.header__logo{
+
+.header__logo {
     display: block;
 }
+
 .header__inner .nav-menu {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
-    & li{
+    &>li {
         padding: 10px 25px;
         transition: 0.3s linear;
         border-radius: 10px;
 
-        &:hover{
+        &:hover {
             background-color: #1c54ad;
             color: white;
         }
     }
 
-    & a{
+    & a {
         font-size: 17px;
         white-space: nowrap;
     }
 }
 
-.header__call{
+.header__call {
     font-size: 17px;
     padding: 10px 25px;
     transition: 0.3s linear;
     border-radius: 10px;
     white-space: nowrap;
 
-    &:hover{
+    &:hover {
         background-color: #1c54ad;
         color: white;
     }
 }
 
-.header__order{
+.header__order {
     white-space: nowrap;
     color: var(--accent-color);
     transition: all 0.3s linear;
@@ -48,7 +56,99 @@
     font-size: 17px;
     font-family: inherit;
 
-    &:hover{
+    &:hover {
         color: var(--button-hover);
     }
+}
+
+/* Стиль для элементов меню с дочерними пунктами */
+.menu-item-has-children {
+    position: relative;
+    /* Для позиционирования дочерних элементов */
+    transition: all 0.3s ease;
+}
+
+/* Стиль для подменю */
+.menu-item-has-children .sub-menu {
+    padding: 0;
+    margin: 0;
+    display: none;
+    /* Скрываем подменю по умолчанию */
+    position: absolute;
+    top: calc(100% + 38px);
+    /* Начинаем подменю прямо под родительским элементом */
+    left: 0;
+    background-color: transparent;
+    /* Фон подменю */
+    // padding-t    op: 39px; /* Отступы внутри подменю */
+    border-radius: 10px;
+    /* Скругленные углы */
+    list-style: none;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 100%;
+
+    &:before {
+        width: 100%;
+        height: 38px;
+        background-color: transparent;
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+    }
+}
+
+/* Показ подменю при наведении */
+.menu-item-has-children:hover .sub-menu {
+    display: flex;
+}
+
+/* Стили для ссылок меню */
+.menu-item-has-children>a,
+.menu-item-has-children .sub-menu li {
+    text-decoration: none;
+    /* Убираем подчеркивание */
+    color: inherit;
+    /* Цвет текста */
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 147%;
+    display: block;
+    // max-width: max-content;
+
+    /* Блочные элементы */
+
+    & a {
+        display: block;
+        // max-width: max-content;
+    }
+}
+
+.menu-item-has-children .sub-menu li {
+    background: #fff;
+    border-radius: 10px;
+    /* Скругленные углы */
+    color: var(--accent-color);
+    padding: 17px 15px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s linear;
+
+    &:hover {
+        background-color:var(--accent-color) ;
+        color: white;
+    }
+}
+
+/* Анимация */
+.menu-item-has-children .sub-menu {
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu-item-has-children:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
 }

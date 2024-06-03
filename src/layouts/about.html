@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiperHistory = new Swiper('.swiper__history', {
+                slidesPerView: 1,      // Количество слайдов на странице
+                spaceBetween: 19,      // Отступ между слайдами в пикселях
+                loop: true,            // Включение циклического режима
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            const swiperTypes = new Swiper('.swiper__types', {
+                slidesPerView: 4,      // Количество слайдов на странице
+                spaceBetween: 19,      // Отступ между слайдами в пикселях
+                loop: true,            // Включение циклического режима
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+            const jobTitleContainer = document.getElementById('job-title-container');
+            const jobTitle = document.getElementById('job-title');
+            const jobList = document.getElementById('job-list');
+            const experience = document.getElementById('experience');
+            const salary = document.getElementById('salary');
+            const dropdownIcon = document.querySelector('.dropdown-icon');
+    
+            jobTitleContainer.addEventListener('click', function () {
+                jobList.classList.toggle('hidden');
+                dropdownIcon.classList.toggle('rotate');
+            });
+    
+            jobList.addEventListener('click', function (event) {
+                if (event.target.tagName === 'LI') {
+                    jobTitle.textContent = event.target.textContent;
+                    experience.textContent = event.target.getAttribute('data-experience');
+                    salary.textContent = event.target.getAttribute('data-salary');
+                    jobList.classList.add('hidden');
+                    dropdownIcon.classList.remove('rotate');
+                }
+            });
+    
+            // To close the list if clicking outside
+            document.addEventListener('click', function (event) {
+                if (!jobTitleContainer.contains(event.target) && !jobList.contains(event.target)) {
+                    jobList.classList.add('hidden');
+                    dropdownIcon.classList.remove('rotate');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

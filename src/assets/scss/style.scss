@@ -8,17 +8,45 @@
 @import 'settings';
 
 
-html,body{
+html,
+body {
   height: 100%;
-   margin: 0;
-   font-family: var(--font-family);
-   font-weight: 400;
-   color: var(--text-color);
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--text-color);
 }
 
-.main{
+.main {
   height: 100%;
-  flex: 1 0 auto; 
+  flex: 1 0 auto;
+  transition: all 0.3s linear;
+}
+
+.page {
+  &:has(.menu-item-has-children:hover) {
+    & .overlay {
+      background: rgba(0, 0, 0, 0.65);
+     
+    }
+
+    & .header {
+      position: relative;
+      z-index: 10;
+    }
+
+    & .section{
+      position: relative;
+      z-index: -1;
+    }
+  }
+}
+
+.overlay{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: all 0.3s linear;
 }
 
 // ======blocks=========
@@ -26,6 +54,7 @@ html,body{
 @import 'blocks/container';
 @import 'blocks/page';
 @import 'blocks/header';
+@import 'blocks/breadcrumps';
 @import 'blocks/hero';
 @import 'blocks/about';
 @import 'blocks/video';
@@ -36,10 +65,17 @@ html,body{
 @import 'blocks/works';
 @import 'blocks/news';
 @import 'blocks/contact';
+
+// страница about
+@import 'blocks/ahero';
+@import 'blocks/submenu';
+@import 'blocks/history';
+@import 'blocks/today';
+@import 'blocks/builder';
+@import 'blocks/types';
+@import 'blocks/philosophy';
+@import 'blocks/managar';
+@import 'blocks/success';
+@import 'blocks/vacancy';
+
 @import 'blocks/footer';
-
-
-
-
-
-

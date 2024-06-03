@@ -1,0 +1,52 @@
+.managar__inner {
+    padding: 45px;
+    border-radius: 10px;
+
+    &>.flex-row {
+        justify-content: space-between;
+        margin-bottom: 130px;
+
+        & .type__tile {
+            font-weight: 500;
+            color: var(--accent-color);
+            border: 1px solid transparent;
+
+            &:hover {
+                border-color: white;
+                color: white;
+            }
+        }
+    }
+
+    &>.grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 70px;
+    }
+}
+
+.managar__inner__item {
+    & .img-wrap {
+        max-width: 214px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 28px;
+    }
+
+    & h4 {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    & p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 17px;
+        text-align: center;
+        color: #fff;
+    }
+}

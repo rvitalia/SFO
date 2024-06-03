@@ -79,7 +79,7 @@ a {
 .type__tile.--white {
   background-color: white;
 
-  &:hover{
+  &:hover {
     background-color: var(--accent-color);
     color: #e9eef3;
   }
@@ -107,6 +107,10 @@ a {
 
   &.dark {
     color: var(--button-hover);
+  }
+
+  &.accent {
+    color: var(--accent-color);
   }
 }
 
@@ -148,6 +152,19 @@ a {
     color: inherit;
     font-size: inherit;
   }
+
+  &.white {
+    background: #4976bd;
+    padding: 17px 34px;
+    font-weight: 500;
+    color: #e9eef3;
+    width: 100%;
+  }
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
 }
 
 .grid-row {
@@ -193,7 +210,7 @@ a {
   transition: all 0.3s linear;
   border-color: #e9eef3;
 
-  &:hover{
+  &:hover {
     background-color: #e9eef3;
     color: var(--accent);
     border-color: var(--accent-color);

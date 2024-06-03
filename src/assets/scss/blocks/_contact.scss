@@ -13,11 +13,31 @@
     }
 }
 
+@supports (selector(:has(*))){
+    .contacts__item:has(.flex-row>a:hover){
+        background: var(--accent-color);
+        & .contacts__item__title{
+            color: #e9eef3;
+        }
+        & p{
+            color: #e9eef3;
+        }
+
+        & a{
+            color: #e9eef3;
+        }
+        & svg{
+            fill: white;
+        }
+    }
+}
+
 .contacts__item {
     padding: 19px 11px 13px 26px;
     border-radius: 10px;
     background: #e9eef3;
     grid-column: 2 span;
+    transition: all 0.3s linear;
 
     & .contacts__item__title {
         font-family: var(--second-family);
@@ -49,6 +69,11 @@
         & * {
             color: #e9eef3;
         }
+    }
+
+    & svg{
+        fill: var(--accent-color);
+        transition: all 0.3s linear;
     }
 }
 

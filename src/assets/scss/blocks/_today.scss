@@ -1,0 +1,125 @@
+.today__inner {
+    @include bg-cover;
+    padding: 40px 45px 90px;
+    border-radius: 10px;
+    height: 100vh;
+    max-height: 779px;
+
+    display: flex;
+    flex-direction: column;
+
+    & * {
+        color: white;
+    }
+
+    & .grid-row {
+        flex-grow: 1;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+
+    & .flex-column {
+        & h3 {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        & p {
+            font-size: 17px;
+            font-weight: 500;
+            max-width: 750px;
+
+            & b {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.today__inner__bottom {
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+
+    & hr {
+        margin-top: 36px;
+        margin-bottom: 26px;
+    }
+
+
+}
+
+.today__inner__bottom {
+
+    & dl {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & dt {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 35px;
+        }
+
+        & dd {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 125%;
+        }
+    }
+
+    & li {
+        &:last-child {
+            background: #1c54ad;
+            max-width: 320px;
+            padding: 20px 20px 50px;
+            border-radius: 10px;
+            position: relative;
+            transition: all 0.3s linear;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            &:has(.swiper__hero__slide__link:hover) {
+                background-color: #fff;
+                & h3, & p{
+                    color: var(--accent-color);
+                }
+            }
+
+            & h3 {
+                font-family: var(--second-family);
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            & p {
+                font-weight: 500;
+                font-size: 15px;
+            }
+
+            & .swiper__hero__slide__link {
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                z-index: 1;
+                background-color: white;
+
+                &:hover {
+                    background-color: var(--accent-color);
+
+                    & svg {
+                        stroke: #fff;
+                    }
+                }
+
+                & svg {
+                    stroke: var(--accent-color);
+                }
+            }
+        }
+    }
+
+}
