@@ -51,7 +51,7 @@
             jobList.addEventListener('click', function (event) {
                 if (event.target.tagName === 'LI') {
                     jobTitle.textContent = event.target.textContent;
-                    experience.textContent = event.target.getAttribute('data-experience');
+                    experience.innerHTML  = event.target.getAttribute('data-experience');
                     salary.textContent = event.target.getAttribute('data-salary');
                     jobList.classList.add('hidden');
                     dropdownIcon.classList.remove('rotate');

@@ -1,0 +1,31 @@
+.four04__inner {
+    @include bg-cover;
+    border-radius: 10px;
+    height: 100vh;
+    max-height: 722px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 45px;
+
+    & .flex-row{
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    & .type__tile{
+        border: 1px solid transparent;
+        &:hover{
+            border-color: var(--accent-color);
+        }
+    }
+}
+
+.four04__inner__title {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 65px;
+    text-transform: uppercase;
+}

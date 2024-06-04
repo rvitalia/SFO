@@ -16,24 +16,12 @@
         grid-column: 3 span;
 
     }
-
-    & #breadcrumps span,
-    & #breadcrumps span a {
-        color: rgba(64, 64, 64, 0.5);
-    }
-
-    & #breadcrumps span>span {
-        color: #404040;
-    }
-
-    & #breadcrumps {
-        padding-left: 0;
-    }
 }
 
 .requisite__item {
 
-    & .project__title {
+    & .project__title--main {
+        font-size: 65px;
         margin-bottom: 27px;
         margin-top: -10px;
     }

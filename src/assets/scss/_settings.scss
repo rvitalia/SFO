@@ -102,7 +102,7 @@ a {
   max-width: max-content;
 }
 
-.project__title {
+.project__title, .project__title--main {
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 50px;
@@ -116,6 +116,11 @@ a {
     color: var(--accent-color);
   }
 }
+.project__title--main{
+font-size: 65px;
+}
+
+
 
 .embed-container {
   position: relative;
@@ -211,7 +216,7 @@ a {
   padding: 16px 20px;
   cursor: pointer;
   transition: all 0.3s linear;
-  border-color: #e9eef3;
+  border: 1px solid #e9eef3;
 
   &:hover {
     background-color: #e9eef3;

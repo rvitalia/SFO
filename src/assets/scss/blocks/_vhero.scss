@@ -1,0 +1,107 @@
+.vhero {
+    & .project__title--main {
+        margin-bottom: 55px;
+    }
+
+    & .grid-row {
+        gap: 16px;
+
+        &+.grid-row {
+            margin-top: 0;
+        }
+    }
+
+
+
+}
+
+.vhero__item {
+    background: #e9eef3;
+    border-radius: 10px;
+    padding: 22px 16px 32px 32px;
+    transition: all 0.3s linear;
+
+    & .wrap-img {
+        max-width: 167px;
+        margin-left: auto;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    & dl {
+        justify-content: space-between;
+        gap: 10px;
+        align-items: flex-end;
+    }
+
+    &.full {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include bg-cover;
+
+        & .vhero__item__title,
+        & .vhero__item__desc,
+        & .vhero__item__price {
+            color: #fff;
+        }
+        
+        & .swiper__hero__slide__link {
+            background-color: white;
+
+            & svg {
+                stroke: var(--accent-color);
+            }
+
+            &:hover {
+                background-color: var(--accent-color);
+
+                & svg {
+                    stroke: white;
+                }
+            }
+        }
+    }
+
+    &.--accent {
+        &:has(.swiper__hero__slide__link:hover){
+            background-color: #e9eef3 !important;
+
+            & .vhero__item__title,
+            & .vhero__item__desc,
+            & .vhero__item__price {
+                color: #404040;
+            }
+        }
+       
+    }
+}
+
+.vhero__item__title {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 20px;
+    color: #404040;
+    display: block;
+    margin-bottom: 30px;
+    transition: color 0.3s linear;
+}
+
+.vhero__item__desc {
+    font-weight: 500;
+    font-size: 17px;
+    color: #404040;
+    margin-bottom: 20px;
+    transition: color 0.3s linear;
+}
+
+.vhero__item__price {
+    font-weight: 500;
+    font-size: 17px;
+    color: #404040;
+    transition: color 0.3s linear;
+
+    & b {
+        font-weight: 700;
+    }
+}
