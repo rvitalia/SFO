@@ -93,4 +93,8 @@ body {
 // страница подразделения
 @import 'blocks/division';
 
+//страница типовой шаблон вакансий
+@import 'blocks/intro';
+@import 'blocks/conditions';
+
 @import 'blocks/footer';

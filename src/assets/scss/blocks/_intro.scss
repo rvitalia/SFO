@@ -1,0 +1,34 @@
+.intro {
+    @include bg-cover;
+    padding: 40px 47px;
+    border-radius: 10px;
+
+    #breadcrumps {
+        padding-left: 0;
+    }
+
+    & .project__title--main {
+        margin-bottom: 20px;
+    }
+
+    & dl {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+
+        & p {
+            font-weight: 500;
+            font-size: 17px;
+            color: #fff;
+
+            & b{
+                font-weight: 700;
+            }
+        }
+
+        & p+p {
+            margin-top: 20px;
+        }
+    }
+
+}
