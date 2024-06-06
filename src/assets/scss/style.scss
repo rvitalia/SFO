@@ -93,6 +93,12 @@ body {
 // страница подразделения
 @import 'blocks/division';
 
+// страница новостей
+// @import 'blocks/news';
+
+// страница типовая подразделения
+@import 'blocks/sindivision';
+
 //страница типовой шаблон вакансий
 @import 'blocks/intro';
 @import 'blocks/conditions';
