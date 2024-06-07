@@ -1,5 +1,7 @@
 .video__inner {
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 
     &.hide{
         & .video__inner__play, & .video__inner__preview{

@@ -1,0 +1,11 @@
+.pagecontact {
+    & .project__title--main {
+        margin-bottom: 55px;
+    }
+
+    &+.order {
+        & .project__title {
+            max-width: 701px;
+        }
+    }
+}

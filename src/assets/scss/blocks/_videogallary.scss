@@ -1,0 +1,22 @@
+.videogallary{
+    & .flex-row{
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    & .video__inner{
+        margin-bottom: 16px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    & .grid-row{
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+        gap: 16px;
+
+        & .embed-container{
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    }
+}

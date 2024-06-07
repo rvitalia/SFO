@@ -99,6 +99,16 @@ body {
 // страница типовая подразделения
 @import 'blocks/sindivision';
 
+// страница типовая контактов 
+@import 'blocks/pagecontact';
+// @import 'blocks/order';
+
+// страница типовая галерея 
+// @import 'blocks/works';
+// @import 'blocks/order';
+// @import 'blocks/video';
+@import 'blocks/videogallary';
+
 //страница типовой шаблон вакансий
 @import 'blocks/intro';
 @import 'blocks/conditions';
