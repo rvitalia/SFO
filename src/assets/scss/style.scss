@@ -113,4 +113,11 @@ body {
 @import 'blocks/intro';
 @import 'blocks/conditions';
 
+//страница типовой шаблон tender
+@import 'blocks/tenders';
+@import 'blocks/personal';
+// @import 'blocks/details';
+@import 'blocks/tenderlist';
+
+
 @import 'blocks/footer';

@@ -1,0 +1,42 @@
+.tenders__inner {
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    padding: 45px;
+
+    & #breadcrumps {
+        padding-left: 0;
+    }
+
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 16px;
+    }
+}
+
+.tenders__inner__right {
+
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+    }
+
+    & p {
+        color: #fff;
+        font-size: 17px;
+        line-height: 147%;
+
+        & b{
+            font-weight: 700;
+        }
+    }
+
+}
