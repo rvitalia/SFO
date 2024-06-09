@@ -10,6 +10,15 @@
 }
 
 .order__form {
+    & * {
+
+        &:not(.project__submit){
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 15px;
+            color: #404040;
+        }
+    }
 
     &>p {
         font-size: 17px;
@@ -45,18 +54,18 @@
 
     & .order__form {
 
-        & p{
+        & p {
             letter-spacing: -.2px;
             margin-bottom: 20px;
         }
     }
 
-    .file-upload {
+    & .file-upload {
         display: flex;
         align-items: center;
     }
 
-    #file-button {
+    & #file-button {
         display: flex;
         align-items: center;
         gap: 16px;
@@ -70,7 +79,7 @@
         }
     }
 
-    #file-input {
+    & #file-input {
         display: none;
         /* Скрыть input */
     }

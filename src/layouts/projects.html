@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sliders = document.querySelectorAll('.slider');
+
+            sliders.forEach(slider => {
+                const slides = slider.querySelectorAll('.slide');
+                const dots = slider.querySelectorAll('.dot');
+                let currentIndex = 0;
+                let slideInterval;
+
+                const showSlide = (index) => {
+                    if (index >= slides.length) index = 0;
+                    if (index < 0) index = slides.length - 1;
+
+                    slider.querySelector('.slides').style.transform = `translateX(-${index * 100}%)`;
+
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+
+                    currentIndex = index;
+                };
+
+                const startSlideShow = () => {
+                    slideInterval = setInterval(() => {
+                        showSlide(currentIndex + 1);
+                    }, 3000);
+                };
+
+                const stopSlideShow = () => {
+                    clearInterval(slideInterval);
+                };
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        stopSlideShow();
+                        showSlide(index);
+                        startSlideShow();
+                    });
+                });
+
+                showSlide(currentIndex);
+                startSlideShow();
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+.single {
+    .project__title {
+        text-transform: uppercase;
+        margin-top: 5px;
+        margin-bottom: 35px;
+    }
+
+    & time {
+        font-weight: 500;
+        font-size: 15px;
+        color: #404040;
+        margin-bottom: 50px;
+        display: block;
+    }
+
+    & .masonry-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -10px;
+    }
+
+    & .grid-item {
+        width: 30%;
+        /* Ширина элемента, можно настроить под себя */
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    & .grid-item img {
+        width: 100%;
+        display: block;
+    }
+
+    & .grid-row {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 16px;
+
+        & .grid-item {
+            width: 100%;
+
+            &:nth-child(1),
+            &:nth-child(4) {
+                grid-column: 3 span;
+                grid-row: 2 span;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                grid-column: 4/8;
+
+                & img {
+                    height: 100%;
+                }
+            }
+
+            &:nth-child(2) {
+                grid-row: 1;
+            }
+
+            &:nth-child(3) {
+                grid-row: 2;
+            }
+        }
+    }
+}
+
+.single__inner {
+    background: #e9eef3;
+    border-radius: 10px;
+    padding: 55px 35px;
+    margin-bottom: 110px;
+
+    & p {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 147%;
+        color: #404040;
+        margin: 0;
+
+        & + p{
+            margin-top: 20px;
+        }
+    }
+}

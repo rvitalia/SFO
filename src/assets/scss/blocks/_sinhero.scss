@@ -1,0 +1,44 @@
+.sinhero__inner {
+    @include bg-cover;
+    padding: 40px 50px;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    & #breadcrumps{
+        padding-left: 0;
+    }
+}
+
+.sinhero__inner__desc {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 250px;
+
+    & h3 {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 20px;
+        color: #404040;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    & p {
+        font-size: 17px;
+        line-height: 147%;
+        color: #404040;
+        margin: 0;
+    }
+}
+
+.sinhero__inner__links{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
