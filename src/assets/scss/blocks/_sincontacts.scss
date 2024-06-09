@@ -1,0 +1,18 @@
+.sincontacts{
+    & .container + .container{
+        margin-top: 16px;
+    }
+    & .grid-row{
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    & .contacts__item{
+        grid-column: unset;
+    }
+
+    & iframe{
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}

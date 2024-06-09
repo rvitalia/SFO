@@ -28,11 +28,10 @@ a {
   padding: 0;
 }
 
-// .background-center{
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-// }
+.hyphenated {
+  hyphens: auto;
+  word-break: break-word;
+}
 
 .h-reset {
   margin: 0;

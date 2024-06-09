@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <script>
+        const swiperLife = new Swiper('.swiper__life', {
+            slidesPerView: 4,      // Количество слайдов на странице
+            spaceBetween: 19,      // Отступ между слайдами в пикселях
+            loop: true,            // Включение циклического режима
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <!-- <script>
+        $(document).ready(function () {
+            var options = {
+                idMap: 'map',
+                centerMap: [55.189881, 83.142107],
+                zoom: '14',
+                minZoom: 10,
+                marks: [
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/f08/koyiu3s0sc8obu974xbmz7r6eop05nyk.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.189091300117,83.142446153442],
+                        hint: 'Достопримечательность',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/d23/dnmrkxdu7q06z6xpvkqbt8rufav9lbhy.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [],
+                        hint: 'Аптека',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/a95/d66vuvl0gbpeukllk90q1t3b3oy50qbd.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.191448306956,83.140171640196],
+                        hint: 'Детский сад',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/a22/i4d8vah5ggf1coxj5fk3ht7g3ax136n7.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [],
+                        hint: 'Workout',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/c4e/ajh2r35rdat386kygaaf7aitw9dgb0x6.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.191877954197,83.141893618383],
+                        hint: 'Торговый центр',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/6f0/pmwjeih20wmom3zbza62hjkc1wnxaa2e.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [],
+                        hint: 'Место для выгула собак',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/434/8o5u188eezwn0b7kh0b0qvk0uvx7tmhf.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.188775180173,83.138642781057],
+                        hint: 'Автозаправка',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/9cc/uvt9ce1slbp9jahbbad2wbgbhil04lgw.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [],
+                        hint: 'Парк',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/a4b/potarpm77h3s7o5e1j39hm0ohfknnwad.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [],
+                        hint: 'Транспорт',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/104/h4djgojqn6j2fhs6i35s0m0jtc9mt52r.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.192580725075,83.142489068785],
+                        hint: 'Поликлинника',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/466/3bq0t3s6k1fnx73b61wslcv1y1sp0u71.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.191500478356,83.140160911359],
+                        hint: 'Фитнес-клуб',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        icon: '/upload/iblock/992/mgtfriykxug98vsecmkefs2em55p1ekw.png',
+                        iconSize: [30, 30],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.193452266607,83.141614668646],
+                        hint: 'Школа',
+                        balloon: '',
+                    },
+                                    {
+                        iconLayout: 'default#imageWithContent',
+                        iconSize: [40, 50],
+                        iconOffset: [-20, -20],
+                        iconPlace: [55.189881, 83.142107],
+                        hint: 'Новосибирская обл., п. Октябрьский, ул. Локтинская, д. 10/2',
+                        balloon: 'Новосибирская обл., п. Октябрьский, ул. Локтинская, д. 10/2',
+                    }
+                ]
+            };
+            new App.myMap(options);
+        })
+    </script> -->
+</body>
+
+</html>

@@ -128,6 +128,18 @@ body {
 
 //страница типовой шаблон single-projects
 @import 'blocks/sinhero';
+@import 'blocks/sindescription';
+@import 'blocks/sinphoto';
+@import 'blocks/sincontacts';
+
+//страница типовой шаблон light
+@import 'blocks/light';
+@import 'blocks/benefits';
+@import 'blocks/liabout';
+@import 'blocks/ligallary';
+@import 'blocks/location';
+@import 'blocks/life';
+// @import 'blocks/order';
 
 
 @import 'blocks/footer';

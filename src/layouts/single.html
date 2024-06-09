@@ -16,21 +16,6 @@
         <div class="overlay"></div>
     </div>
     <!-- <script src="assets/js/app.js"></script> -->
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elem = document.querySelector('.masonry-grid');
-            console.log(elem.querySelectorAll('.grid-item').length);
-            if(elem.querySelectorAll('.grid-item').length > 4){
-                var msnry = new Masonry(elem, {
-                    itemSelector: '.grid-item',
-                    columnWidth: '.grid-item',
-                    percentPosition: true
-                });
-            }else{
-                elem.classList.add('grid-row');
-            }
-        });
-    </script>
 </body>
 
 </html>

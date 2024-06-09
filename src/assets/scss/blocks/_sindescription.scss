@@ -1,0 +1,84 @@
+.sindescription__inner {
+    @include bg-cover;
+    padding: 45px 50px;
+
+    & .grid-row {
+        &:first-child {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        &:last-child {
+            margin-top: 85px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+            & dl {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                & dt {
+                    font-family: var(--second-family);
+                    font-weight: 500;
+                    font-size: 35px;
+                    line-height: 71%;
+                    text-align: center;
+                    color: var(--accent-color);
+                }
+                
+                & dd {
+                    font-size: 20px;
+                    text-align: center;
+                    color: var(--accent-color);
+                }
+            }
+        }
+    }
+}
+
+.sindescription__inner__right {
+    & h3 {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 147%;
+        color: #404040;
+        margin-bottom: 30px;
+    }
+
+    & p {
+        font-weight: 500;
+        color: #404040;
+        line-height: 147%;
+        font-size: 17px;
+    }
+
+    & ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        margin-bottom: 40px;
+
+
+        & li {
+            font-weight: 500;
+            color: #404040;
+            line-height: 147%;
+            font-size: 17px;
+
+            &:before {
+                content: '';
+                background-image: url('data:image/svg+xml,%3Csvg%20width=%2215%22%20height=%2215%22%20viewBox=%220%200%2015%2015%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%3Ccircle%20cx=%227.5%22%20cy=%227.5%22%20r=%227.5%22%20fill=%22white%22/%3E%20%3Cpath%20d=%22M10.5%205.25L6.375%209.375L4.5%207.5%22%20stroke=%22#1C54AD%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%20%3C/svg%3E');
+                width: 15px;
+                height: 15px;
+                @include bg-cover;
+                display: inline-flex;
+                margin-right: 11px;
+            }
+        }
+    }
+}

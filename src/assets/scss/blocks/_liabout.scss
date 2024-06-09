@@ -1,0 +1,42 @@
+.liabout {
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    & .liabout__item {
+        background: #e9eef3;
+        border-radius: 10px;
+        padding: 25px 35px;
+        padding-right: 77px;
+
+        & .project__title {
+            margin-bottom: 35px;
+        }
+
+        & h3 {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 125%;
+            color: #404040;
+        }
+
+        & p{
+            font-size: 17px;
+            line-height: 125%;
+            font-weight: 500;
+            margin: 0;
+
+            & + p{
+                margin-top: 35px;
+            }
+
+        }
+        &.--accent{
+            & h3, & p{
+                color: white;
+            }
+        }
+    }
+}

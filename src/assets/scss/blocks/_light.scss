@@ -1,0 +1,40 @@
+.light__inner {
+    padding: 40px 50px 55px;
+    @include bg-cover;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 16px;
+    }
+}
+
+.light__inner__right {
+    color: #fff;
+
+    & h3{
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 125%;
+        display: block;
+        margin-bottom: 25px;
+    }
+    & p{
+        font-size: 17px;
+
+        & b{
+            font-weight: 700;
+        }
+
+        & + p{
+            margin-top: 25px;
+        }
+    }
+
+    & .type__tile{
+        margin-top: 20px;
+        color: var(--accent-color);
+    }
+}

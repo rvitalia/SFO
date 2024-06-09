@@ -1,0 +1,48 @@
+.benefits {
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 16px;
+    }
+}
+
+.benefits__item {
+    border-radius: 10px;
+    background-color: #e9eef3;
+    padding: 25px;
+
+    & .flex-row {
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+
+        & svg {
+            max-width: 100px;
+            max-height: 77px;
+        }
+
+        & .benefits__item__title {
+            margin: 0;
+            font-family: var(--second-family);
+            font-weight: 400;
+            font-size: 20px;
+            color: #404040;
+        }
+    }
+    & p{
+        margin-top: 11px;
+        margin-bottom: 0;
+    }
+    
+    &.--accent {
+
+        & .benefits__item__title {
+            color: #fff;
+        }
+
+        & p {
+            font-weight: 500;
+            font-size: 17px;
+            color: #fff;
+        }
+    }
+}

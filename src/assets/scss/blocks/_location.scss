@@ -1,0 +1,48 @@
+.location {
+    & .container>.grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.location__left {
+    background: #e9eef3;
+    border-radius: 10px;
+    padding: 25px 45px;
+
+
+    & h3 {
+        font-family: var(--second-family);
+        font-size: 20px;
+        font-weight: 500;
+        color: #404040;
+    }
+
+    & p {
+        font-size: 17px;
+        font-weight: 500;
+        color: #404040;
+    }
+
+    & .grid-row {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+
+        & li {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 20px;
+            color: #404040;
+            // word-break:normal;
+
+            & svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}

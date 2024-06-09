@@ -94,24 +94,27 @@
                     <li><a href="">Музей Солнца</a></li>
                   </ul>
                 </li>
-                <li><a href="">О светлом</a></li>
                 <li class="menu-item-has-children">
                   <a href="">Проекты</a>
                   <ul class="sub-menu">
-                    <li><a href=""><img src="./assets/images/header/logo_header1.svg" alt="logo_header1">Альпийский квартал</a></li>
+                    <li><a href=""><img src="./assets/images/header/logo_header1.svg" alt="logo_header1">Альпийский квартал</a>
+                    </li>
                     <li><a href=""><img src="./assets/images/header/header2.svg" alt="header2">Французский квартал</a></li>
                     <li><a href=""><img src="./assets/images/header/header3.svg" alt="header3">Светлый жилой район</a></li>
                     <li><a href=""><img src="./assets/images/header/Group137.svg" alt="Group137">Ясный жилой квартал</a></li>
                   </ul>
                 </li>
+                <li><a href="">О светлом</a></li>
                 <li><a href="">Новости</a></li>
                 <li><a href="">Тендеры</a></li>
                 <li><a href="">Галерея</a></li>
                 <li><a href="">Контакты</a></li>
               </ul>
             </nav>
-            <a href="tel:+73833832673" class="header__call">+7 (383) 383 26 73 </a>
-            <button class="btn-reset header__order">Заказать звонок</button>
+            <div class="flex-row">
+              <a href="tel:+73833832673" class="header__call">+7 (383) 383 26 73 </a>
+              <button class="btn-reset header__order">Заказать звонок</button>
+            </div>
           </div>
         </header>
         <main class="main">
@@ -139,7 +142,7 @@
                         <p>Также мы приступили к проектированию новой школы на 1500 мест. Ее строительство начнется в 2025-2027 годах. В планах — и строительство пристройки к существующей школе на 250 мест. А также для самых маленьких в 2024-2027 годах будут введены в эксплуатацию пять детских садов.</p>
                         <p>В ближайшей перспективе на территории Светлого планируется начать строительство большого парка. В сердце поселка появится удобная площадка со сценой для проведения массовых мероприятий, здесь же будет устанавливаться центральная новогодняя елка. И начнутся работы по созданию искусственного водоема. Планы у нас большие.</p>
                     </div>
-                    <div class="masonry-grid">
+                    <div class="masonry-grid grid-row">
                         <div class="grid-item"><img src="./assets/images/single/Rectangle 157.png" alt="Image 1"></div>
                         <div class="grid-item"><img src="./assets/images/single/Rectangle 158.png" alt="Image 2"></div>
                         <div class="grid-item"><img src="./assets/images/single/Rectangle 159.png" alt="Image 3"></div>
@@ -203,21 +206,6 @@
         </footer>        <div class="overlay"></div>
     </div>
     <!-- <script src="assets/js/app.js"></script> -->
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elem = document.querySelector('.masonry-grid');
-            console.log(elem.querySelectorAll('.grid-item').length);
-            if(elem.querySelectorAll('.grid-item').length > 4){
-                var msnry = new Masonry(elem, {
-                    itemSelector: '.grid-item',
-                    columnWidth: '.grid-item',
-                    percentPosition: true
-                });
-            }else{
-                elem.classList.add('grid-row');
-            }
-        });
-    </script>
 </body>
 
 </html>
