@@ -26,6 +26,26 @@
             },
         });
     </script>
+    <script>
+        const swiperImage = new Swiper('.swiper__salut', {
+        slidesPerView: 1,      // Количество слайдов на странице
+        spaceBetween: 19,      // Отступ между слайдами в пикселях
+        loop: true,            // Включение циклического режима
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    const swiper = new Swiper('.swiper__main', {
+        slidesPerView: 1,      // Количество слайдов на странице
+        spaceBetween: 16,      // Отступ между слайдами в пикселях
+        loop: true,            // Включение циклического режима
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    </script>
     <!-- <script>
         $(document).ready(function () {
             var options = {

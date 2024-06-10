@@ -1,0 +1,31 @@
+.geoplan__inner{
+    display: flex;
+    gap: 16px;
+
+    & .img-wrap{
+        width: 100%;
+    }
+
+    & .philosophy__inner__question{
+        background-color: var(--accent-color);
+        position: relative;
+        width: 100%;
+        max-width: 697px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        & form *{
+            position: relative;
+            z-index: 2;
+        }
+
+        & .genplan__svg{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate3d(-50%, -50%, 0);
+            z-index: 0;
+        }
+    }
+}

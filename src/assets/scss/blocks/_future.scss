@@ -1,0 +1,109 @@
+.future__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 16px;
+
+
+}
+
+.future__inner__back,
+.future__inner__plan {
+    padding: 25px 34px 100px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & .project__title {
+        margin-bottom: 60px;
+    }
+
+    & .swiper-button-prev {
+        right: 60px;
+        top: 22px;
+    }
+
+    & .flex-row {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 50px;
+        margin-right: 110px;
+        gap: 16px;
+
+        & .small {
+            font-family: var(--second-family);
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        & .line {
+            height: 5px;
+            width: 100%;
+            background: #fff;
+        }
+
+        & .big {
+            font-family: var(--second-family);
+            font-weight: 400;
+            font-size: 50px;
+        }
+    }
+}
+
+.future__inner__back {
+    background: #e9eef3;
+
+    & .big {
+        color: var(--accent-color);
+    }
+
+    & .small {
+        color: white;
+    }
+
+    & li {
+        color: #404040;
+    }
+
+}
+
+.future__inner__plan {
+    background: #e9eef3;
+
+    & .big {
+        color: #fff;
+    }
+
+    & .small {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    & li {
+        color: #fff;
+    }
+
+}
+
+.future__inner__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    & li {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 147%;
+        display: inline-flex;
+        align-items: flex-start;
+
+        &:before {
+            content: '';
+            background-image: url('data:image/svg+xml,%3Csvg%20width=%2215%22%20height=%2215%22%20viewBox=%220%200%2015%2015%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%3Ccircle%20cx=%227.5%22%20cy=%227.5%22%20r=%227.5%22%20fill=%22white%22/%3E%20%3Cpath%20d=%22M10.5%205.25L6.375%209.375L4.5%207.5%22%20stroke=%22#1C54AD%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%20%3C/svg%3E');
+            width: 15px;
+            height: 15px;
+            @include bg-cover;
+            display: inline-flex;
+            margin-right: 11px;
+            min-width: 15px;
+            margin-top: 5px;
+        }
+    }
+}

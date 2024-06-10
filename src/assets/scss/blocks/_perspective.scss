@@ -1,0 +1,66 @@
+.perspective {
+    & .flex-row {
+        gap: 16px;
+        justify-content: space-between;
+        padding: 50px 45px;
+        @include bg-cover;
+        border-radius: 10px;
+        overflow: hidden;
+
+        & .grid-row {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1076px;
+        }
+
+        & .perspective__item {
+            padding: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &.--white{
+                & h3, & p{
+                    color: #404040;
+                }
+            }
+
+            &.text{
+                padding: 0;
+            }
+
+            & h3 {
+                font-family: var(--second-family);
+                font-weight: 500;
+                font-size: 20px;
+                color: #fff;
+                margin: 0;
+            }
+            
+            & p {
+                color: #fff;
+                margin: 0;
+                font-weight: 500;
+                font-size: 17px;
+                margin-top: 20px;
+
+                & + h3{
+                    margin-top: 20px;
+                }
+            }
+
+            & svg {
+                max-width: 114px;
+                max-height: 114px;
+                display: block;
+                margin-left: auto;
+            }
+
+            &:nth-child(1) {
+                grid-column: 2;
+            }
+        }
+    }
+}

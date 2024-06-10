@@ -1,0 +1,45 @@
+.help {
+    & .project__title {
+        margin-bottom: 50px;
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 16px;
+    }
+
+    & .help__item {
+        padding: 20px 30px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:nth-child(2){
+            & svg{
+                height: 17px;
+            }
+        }
+
+        & h3 {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 125%;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        & a {
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 147%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+}
