@@ -6,9 +6,11 @@
                     <a href="#" class="footer__logo">
                         <img src="./assets/images/footer/СФО.svg" alt="logo">
                     </a>
-                    <hr>
-                    <p>Есть вопросы или предложения?</p>
-                    <a href="" class="footer__order">Обратиться к руководителю</a>
+                    <div class="flex-column">
+                        <hr>
+                        <p>Есть вопросы или предложения?</p>
+                        <a href="" class="footer__order">Обратиться к руководителю</a>
+                    </div>
                 </div>
                 <ul class="list-reset footer__menu">
                     <li><a href="">О компании</a></li>
@@ -20,6 +22,11 @@
                     <li><a href="">Галерея</a></li>
                     <li><a href="">Контакты</a></li>
                 </ul>
+                <div class="flex-column footer__wrapper__mobile">
+                    <hr>
+                    <p>Есть вопросы или предложения?</p>
+                    <a href="" class="footer__order">Обратиться к руководителю</a>
+                </div>
                 <ul class="footer__social list-reset">
                     <li><a href="tel:+73833832673" target="_blank" rel="nofollow"><img
                                 src="./assets/images/footer/u_phone-alt.svg" width="24" height="24" alt="phone">+7 (383)
@@ -51,3 +58,40 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burgerMenu = document.getElementById('burgerMenu');
+        const menu = document.querySelector('.mobile__menu');
+        let items = menu.querySelectorAll('a');
+
+        burgerMenu.addEventListener('click', function () {
+            const submenu = menu.querySelectorAll('.sub-menu');
+            submenu.forEach(item => {
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.classList.remove('animate');
+                }
+            });
+            this.classList.toggle('open');
+            menu.classList.toggle('active');
+            setTimeout(() => {
+                menu.classList.toggle('animate');
+            }, 100);
+        });
+
+        items.forEach(element => {
+            element.addEventListener('click', (event) => {
+                let subMenu = element.nextElementSibling;
+                if (subMenu.classList.contains('sub-menu')) {
+                    event.preventDefault();
+                    subMenu.classList.toggle('active');
+                    setTimeout(() => {
+                        subMenu.classList.toggle('animate');
+                    }, 100);
+                }
+            })
+        });
+    });
+
+</script>
