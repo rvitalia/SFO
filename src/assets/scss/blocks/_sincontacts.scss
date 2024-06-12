@@ -1,17 +1,37 @@
-.sincontacts{
-    & .container + .container{
-        margin-top: 16px;
-    }
-    & .grid-row{
-        gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.sincontacts {
+
+    & .project__title {
+        margin-bottom: 40px;
     }
 
-    & .contacts__item{
+    & .container+.container {
+        margin-top: 16px;
+    }
+
+    & .grid-row {
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+
+        @include small-tablet {
+            grid-template-columns: 1fr 1fr;
+
+            & .contacts__item {
+
+                &:first-child,
+                &:nth-child(2) {
+                    grid-column: 2 span;
+                    max-width: unset;
+                }
+            }
+
+        }
+    }
+
+    & .contacts__item {
         grid-column: unset;
     }
 
-    & iframe{
+    & iframe {
         border-radius: 10px;
         overflow: hidden;
     }

@@ -2,15 +2,39 @@
     @include bg-cover;
     padding: 45px 50px;
 
+    @include mobile {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     & .grid-row {
         &:first-child {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 16px;
+
+            @include for-desktop {
+                grid-template-columns: 1fr;
+            }
         }
 
         &:last-child {
             margin-top: 85px;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+
+            @include tablet {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+
+                & li {
+                    flex: 1 0 calc(33.3% - 16px);
+                }
+            }
+
+            @include mobile{
+                margin-top: 50px;
+            }
 
             & dl {
                 display: flex;
@@ -27,9 +51,9 @@
                     text-align: center;
                     color: var(--accent-color);
                 }
-                
+
                 & dd {
-                    font-size: 20px;
+                    font-size: clamp(17px, 3.4vw, 20px);
                     text-align: center;
                     color: var(--accent-color);
                 }
@@ -42,10 +66,15 @@
     & h3 {
         font-family: var(--second-family);
         font-weight: 500;
-        font-size: 17px;
+        font-size: clamp(15px, 3.5vw, 17px);
         line-height: 147%;
         color: #404040;
         margin-bottom: 30px;
+
+        @include mobile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     }
 
     & p {
@@ -53,6 +82,11 @@
         color: #404040;
         line-height: 147%;
         font-size: 17px;
+
+        @include mobile {
+            font-size: 15px;
+            text-align: center;
+        }
     }
 
     & ul {
@@ -63,12 +97,17 @@
         padding: 0;
         margin-bottom: 40px;
 
+        @include mobile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
 
         & li {
             font-weight: 500;
             color: #404040;
             line-height: 147%;
-            font-size: 17px;
+            font-size: clamp(15px, 3.5vw, 17px);
 
             &:before {
                 content: '';

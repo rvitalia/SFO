@@ -5,6 +5,14 @@
     gap: 16px;
     margin-top: 60px;
 
+    @media (max-width:1250px) {
+        grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    }
+    
+    @include mobile{
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+
     & .img-wrap {
         // height: 100vh;
         // max-height: 662px;
@@ -12,18 +20,32 @@
         overflow: hidden;
 
         & img {
-            object-fit: cover;
+            object-fit: cover;      
         }
     }
 
     & li {
         position: relative;
 
+        @include for-desktop {
+            max-width: 700px;
+        }
+
         &:hover {
-            & .projects__inner__hover {
-                visibility: visible;
-                opacity: 1;
-                transform: rotateX(0);
+            @media (min-width:992px) {
+                & .projects__inner__hover {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: rotateX(0);
+                }
+            }
+
+        }
+        &> .img-wrap>img{
+            @include mobile{
+                min-height: 547px;
+                height: 100%;
+                width: auto;   
             }
         }
     }
@@ -37,6 +59,10 @@
     position: absolute;
     inset: 0;
     z-index: 1;
+
+    @include small-tablet{
+        padding: 20px 10px;
+    }
 }
 
 .projects__inner__regular__top {
@@ -53,19 +79,25 @@
     & h3 {
         font-family: var(--second-family);
         font-weight: 700;
-        font-size: 20px;
+        font-size: clamp(17px, 4vw, 20px);
         color: #e9eef3;
     }
 
     & p {
         font-weight: 500;
-        font-size: 17px;
+        font-size: clamp(15px, 4vw, 17px);
         color: #e9eef3;
+        white-space: nowrap;
     }
 }
 
 .projects__inner__regular__link {
     justify-content: space-between;
+    gap: 16px;
+
+    & span {
+        flex-shrink: 0;
+    }
 
     & p {
         margin: 0;
@@ -171,6 +203,11 @@
     & .flex-row {
         &:last-child {
             justify-content: space-between;
+            gap: 16px;
+
+            & span {
+                flex-shrink: 0;
+            }
 
             & p {
                 max-width: 535px;
@@ -181,7 +218,8 @@
         }
     }
 }
-.projects__inner__hover__logo{
+
+.projects__inner__hover__logo {
     position: absolute;
     top: 26px;
     left: 20px;

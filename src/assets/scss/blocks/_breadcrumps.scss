@@ -1,5 +1,9 @@
 #breadcrumps {
     padding: 16px 20px;
+
+    @include small-tablet{
+        text-align: center;
+      }
     
     & a {
         font-weight: 500;

@@ -10,7 +10,7 @@
     }
 
     & * {
-        font-size: 17px;
+        font-size: clamp(15px , 3.6vw , 17px);
         color: #e9eef3;
     }
 }
@@ -72,6 +72,11 @@
             color: #e9eef3;
             margin-bottom: 25px;
             min-width: 352px;
+
+            @include small-mobile{
+                min-width: unset;
+                text-align: center;
+            }
         }
     }
 
@@ -113,6 +118,10 @@
     max-width: max-content;
     border: 1px solid transparent;
     transition: all 0.3s linear;
+
+    @include small-mobile{
+        text-align: center;
+    }
 
     &:hover {
         border-color: #e9eef3;
@@ -164,6 +173,10 @@
     & li{
         & a{
             display: block;
+
+            @include mobile{
+                text-align: center;
+            }
         }
     }
 

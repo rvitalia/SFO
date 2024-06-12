@@ -69,6 +69,11 @@ a {
   text-align: center;
   cursor: pointer;
 
+  @include mobile{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   &.regular {
     transition: all 0.3s linear;
     padding-left: 45px;
@@ -170,8 +175,12 @@ a {
 .project__title--main {
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: 50px;
+  font-size: clamp(30px, 4.5vw ,50px);
   color: #fff;
+
+  @include small-tablet{
+    text-align: center;
+  }
 
   &.dark {
     color: var(--button-hover);
@@ -183,7 +192,7 @@ a {
 }
 
 .project__title--main {
-  font-size: 65px;
+  font-size: clamp(45px,4.5vw,65px);
 }
 
 
@@ -286,6 +295,11 @@ a {
   cursor: pointer;
   transition: all 0.3s linear;
   border: 1px solid #e9eef3;
+
+  @include mobile{
+    display: block;
+    width: 100%;
+  }
 
   &:hover {
     background-color: #e9eef3;

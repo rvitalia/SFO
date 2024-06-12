@@ -1,11 +1,16 @@
 .order {
     &>.container>.grid-row {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        
+        @include mobile{
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        }
     }
 
     & .project__title {
         max-width: 435px;
         display: block;
+        margin-bottom: 10px;
     }
 }
 
@@ -24,6 +29,9 @@
         font-size: 17px;
         color: #404040;
         margin-bottom: 40px;
+        @include small-tablet{
+            text-align: center;
+        }
     }
 
     & .grid-row {
@@ -44,6 +52,21 @@
     & p {
         font-size: 15px;
         color: #9c9c9c;
+
+        @include mobile{
+            text-align: center;
+        }
+    }
+
+    @include mobile{
+        flex-direction: column-reverse;
+    }
+
+    & span{
+        @include mobile{
+            display: block;
+            width: 100%;
+        }
     }
 }
 
