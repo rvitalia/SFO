@@ -46,6 +46,10 @@ a {
 .section {
   margin-top: 48px;
   margin-bottom: 118px;
+
+  @include small-tablet{
+    margin-bottom: 70px;
+  }
 }
 
 .--accent {

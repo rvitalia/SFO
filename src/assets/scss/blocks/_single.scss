@@ -11,49 +11,58 @@
         color: #404040;
         margin-bottom: 50px;
         display: block;
+
+        @include small-tablet {
+            text-align: center;
+        }
     }
 
-    & .masonry-grid {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -10px;
-    }
+    // & .masonry-grid {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     margin-left: -10px;
+    // }
 
     & .grid-item {
-        width: 30%;
+        // width: 30%;
         /* Ширина элемента, можно настроить под себя */
-        margin-left: 10px;
-        margin-bottom: 10px;
+        // margin-left: 10px;
+        // margin-bottom: 10px;
         border-radius: 10px;
         overflow: hidden;
     }
 
-    & .grid-item img {
-        width: 100%;
-        display: block;
-    }
+    // & .grid-item img {
+    //     width: 100%;
+    //     display: block;
+    // }
 
     & .grid-row {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         gap: 16px;
 
+        @include small-tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include micro-mobile {
+            grid-template-columns: 1fr;
+        }
+
         & .grid-item {
             width: 100%;
+
+            @include micro-mobile {
+                max-height: 250px;
+                min-height: 250px;
+                overflow: hidden;   
+            }
 
             &:nth-child(1),
             &:nth-child(4) {
                 grid-column: 3 span;
                 grid-row: 2 span;
-            }
-
-            &:nth-child(2),
-            &:nth-child(3) {
-                grid-column: 4/8;
-
-                & img {
-                    height: 100%;
-                }
             }
 
             &:nth-child(2) {
@@ -63,6 +72,50 @@
             &:nth-child(3) {
                 grid-row: 2;
             }
+
+            &:nth-child(1) {
+                @include small-tablet {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                @include micro-mobile {
+                    grid-column: unset;
+                    grid-row: unset;
+                }
+            }
+
+            &:nth-child(4) {
+                @include small-tablet {
+                    grid-column: 2;
+                    grid-row: 1;
+                }
+
+                @include micro-mobile {
+                    grid-column: unset;
+                    grid-row: unset;
+                }
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                grid-column: 4/8;
+
+                @include small-tablet {
+                    grid-column: 2 span;
+                    grid-row: unset;
+                }
+
+                @include micro-mobile {
+                    grid-column: unset;
+                }
+
+                & img {
+                    height: 100%;
+                }
+            }
+
+
         }
     }
 }
@@ -73,6 +126,12 @@
     padding: 55px 35px;
     margin-bottom: 110px;
 
+    @include small-tablet {
+        padding-left: 13px;
+        padding-right: 13px;
+        margin-bottom: 70px;
+    }
+
     & p {
         font-weight: 500;
         font-size: 17px;
@@ -80,7 +139,12 @@
         color: #404040;
         margin: 0;
 
-        & + p{
+        @include small-tablet {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        &+p {
             margin-top: 20px;
         }
     }
