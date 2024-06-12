@@ -37,6 +37,10 @@
     & .grid-row {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 16px;
+        
+        @include small-mobile{
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        }
     }
 
     & .project__input {

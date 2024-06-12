@@ -8,4 +8,16 @@
             max-width: 701px;
         }
     }
+
+    & .container{
+        &:last-child{
+            max-height: 532px;
+
+            & .embed-container, & iframe{
+                min-height: 532px;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+        }
+    }
 }

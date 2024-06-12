@@ -4,22 +4,33 @@
     padding: 28px;
     padding-bottom: 80px;
 
+    @include small-tablet{
+        padding-left: 13px;
+        padding-right: 13px;
+        background-position: right;
+    }
+
     & * {
         color: #fff;
     }
     
     & .grid-row {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        @include for-desktop{
+            grid-template-columns: 1fr;
+        }
     }
 }
 
 
 .ahero__inner__item {
     & h1 {
-        font-family: var(--second-family);
-        font-weight: 400;
-        font-size: 65px;
         text-transform: uppercase;
+
+        @include for-desktop{
+            margin-bottom: 30px;
+        }
     }
 
     & strong {
@@ -28,11 +39,22 @@
         font-family: var(--second-family);
         font-weight: 500;
         font-size: 20px;
+
+        @include small-tablet{
+            font-size: 17px;
+            text-align: center;
+        }
+
     }
 
     & p {
         font-size: 17px;
         line-height: 147%;
+
+        @include small-tablet{
+            font-size: 15px;
+            text-align: center;
+        }
 
         & b{
             font-weight: 700;

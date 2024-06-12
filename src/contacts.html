@@ -71,14 +71,18 @@ title: Документ
         </div>
     </div>
     <div class="container">
-        <div style="position:relative;overflow:hidden;"><a
+        <div style="position:relative;overflow:hidden;">
+            <a
                 href="https://yandex.ru/maps?utm_medium=mapframe&utm_source=maps"
                 style="color:#eee;font-size:12px;position:absolute;top:0px;">Яндекс Карты</a><a
                 href="https://yandex.ru/maps/11316/novosibirsk-oblast/house/loktinskaya_ulitsa_10_2/bEoYdwNiSEUAQFtvfX15eHRrZQ==/?ll=83.142107%2C55.189881&utm_medium=mapframe&utm_source=maps&z=17.16"
                 style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт, навигация, поиск
-                мест</a><iframe
-                src="https://yandex.ru/map-widget/v1/?ll=83.142107%2C55.189881&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNTEwMjc4NTUzEqYB0KDQvtGB0YHQuNGPLCDQndC-0LLQvtGB0LjQsdC40YDRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0JzQvtGI0LrQvtCy0YHQutC40Lkg0YDQsNC50L7QvSwg0L_QvtGB0ZHQu9C-0Log0J7QutGC0Y_QsdGA0YzRgdC60LjQuSwg0JvQvtC60YLQuNC90YHQutCw0Y8g0YPQu9C40YbQsCwgMTAvMiIKDcJIpkIVccJcQg%2C%2C&z=17.16"
-                width="1740" height="532" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                мест</a>
+                <div class="embed-container">
+                    <iframe 
+                    src="https://yandex.ru/map-widget/v1/?ll=83.142107%2C55.189881&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNTEwMjc4NTUzEqYB0KDQvtGB0YHQuNGPLCDQndC-0LLQvtGB0LjQsdC40YDRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0JzQvtGI0LrQvtCy0YHQutC40Lkg0YDQsNC50L7QvSwg0L_QvtGB0ZHQu9C-0Log0J7QutGC0Y_QsdGA0YzRgdC60LjQuSwg0JvQvtC60YLQuNC90YHQutCw0Y8g0YPQu9C40YbQsCwgMTAvMiIKDcJIpkIVccJcQg%2C%2C&z=17.16"
+                    width="1740" height="532" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
         </div>
     </div>
 </section>  
@@ -122,3 +126,9 @@ title: Документ
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('file-button').addEventListener('click', function () {
+        document.getElementById('file-input').click();
+    });
+</script>

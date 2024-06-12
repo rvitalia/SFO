@@ -6,27 +6,42 @@
     & .container>.grid-row {
         gap: 16px;
         grid-template-columns: repeat(12, 1fr);
+
+        @media (max-width: 1600px) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @include small-tablet {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 400px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
-    & .container + .container{
+    & .container+.container {
         margin-top: 15px;
     }
 }
 
-@supports (selector(:has(*))){
-    .contacts__item:has(.flex-row>a:hover){
+@supports (selector(:has(*))) {
+    .contacts__item:has(.flex-row>a:hover) {
         background: var(--accent-color);
-        & .contacts__item__title{
-            color: #e9eef3;
-        }
-        & p{
+
+        & .contacts__item__title {
             color: #e9eef3;
         }
 
-        & a{
+        & p {
             color: #e9eef3;
         }
-        & svg{
+
+        & a {
+            color: #e9eef3;
+        }
+
+        & svg {
             fill: white;
         }
     }
@@ -39,7 +54,7 @@
     grid-column: 2 span;
     transition: all 0.3s linear;
 
-    @include mobile{
+    @include mobile {
         padding: 19px 13px;
     }
 
@@ -51,7 +66,7 @@
         margin: 0;
         margin-bottom: 11px;
 
-        @include mobile{
+        @include mobile {
             font-size: 17px;
         }
     }
@@ -61,15 +76,15 @@
         line-height: 128%;
         margin: 0;
 
-        @include mobile{
+        @include mobile {
             font-size: 15px;
         }
 
-        & +p{
+        &+p {
             margin-left: 20px;
         }
 
-        &:first-child{
+        &:first-child {
             width: 100%;
         }
     }
@@ -78,12 +93,27 @@
         max-width: 570px;
         grid-column: 4 span;
 
+        @media (max-width: 1600px) {
+            max-width: unset;
+            grid-column: 2/4;
+        }
+
+        @media (max-width: 1300px) {
+            max-width: unset;
+            grid-column: 4 span;
+        }
+
+        @media (max-width: 400px) {
+            grid-column: 2 span;
+
+        }
+
         & * {
             color: #e9eef3;
         }
     }
 
-    & svg{
+    & svg {
         fill: var(--accent-color);
         transition: all 0.3s linear;
     }
