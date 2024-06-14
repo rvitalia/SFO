@@ -35,6 +35,30 @@
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+                breakpoints: {
+                    // when window width is >= 320px
+                    100: {
+                        slidesPerView: 1,
+                        
+                    },
+                    430: {
+                        spaceBetween: 40,    
+                    },
+                    576: {
+                        spaceBetween: 19,
+                    },
+                    700: {
+                        slidesPerView: 2,
+                    },
+                    // when window width is >= 480px
+                    1150: {
+                        slidesPerView: 3,
+                    },
+                    // when window width is >= 640px
+                    1400: {
+                        slidesPerView: 4,
+                    }
+                }
             });
             const jobTitleContainer = document.getElementById('job-title-container');
             const jobTitle = document.getElementById('job-title');
@@ -42,22 +66,22 @@
             const experience = document.getElementById('experience');
             const salary = document.getElementById('salary');
             const dropdownIcon = document.querySelector('.dropdown-icon');
-    
+
             jobTitleContainer.addEventListener('click', function () {
                 jobList.classList.toggle('hidden');
                 dropdownIcon.classList.toggle('rotate');
             });
-    
+
             jobList.addEventListener('click', function (event) {
                 if (event.target.tagName === 'LI') {
                     jobTitle.textContent = event.target.textContent;
-                    experience.innerHTML  = event.target.getAttribute('data-experience');
+                    experience.innerHTML = event.target.getAttribute('data-experience');
                     salary.textContent = event.target.getAttribute('data-salary');
                     jobList.classList.add('hidden');
                     dropdownIcon.classList.remove('rotate');
                 }
             });
-    
+
             // To close the list if clicking outside
             document.addEventListener('click', function (event) {
                 if (!jobTitleContainer.contains(event.target) && !jobList.contains(event.target)) {
@@ -66,6 +90,59 @@
                 }
             });
         });
+    </script>
+    <!-- обрезание слайдера -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const history = document.querySelectorAll('.swiper__history__slide');
+            const screenWidth = window.innerWidth;
+            history ? checkScreen() : '';
+
+
+            function checkScreen() {
+                history.forEach(element => {
+                    if (screenWidth < 1200 && screenWidth > 900) {
+                        deleteElements(element, 4);
+                    }
+                    if (screenWidth < 900 && screenWidth > 700) {
+                        deleteElements(element, 3);
+                    }
+                    if (screenWidth < 700 && screenWidth > 550) {
+                        deleteElements(element, 2);
+                    }
+                    if (screenWidth < 550) {
+                        deleteElements(element, 1);
+                    }
+
+                });
+            }
+            function deleteElements(element, count) {
+                const listItems = element.children;
+                const activeIndex = Array.from(listItems).findIndex(item => item.classList.contains('active'));
+                const length = Array.from(listItems).length;
+
+                if (activeIndex != -1) {
+                    const start = Math.max(0, activeIndex);
+                    const end = Math.min(listItems.length, activeIndex + (count * 2) + 1);
+
+
+                    Array.from(listItems).forEach((item, index) => {
+                        if ((length - end) > 0) {
+                            index < start || index >= end ? item.remove() : '';
+                        } else {
+                            let correction = Math.floor((length - activeIndex) / 2)
+                            if (length - (start - (correction * 2)) !== 1) {
+                                index < (start - (correction + 1)) || index >= (end - (correction + 1)) ? item.remove() : '';
+                            } else {
+                                index < start - count * 2 || index >= end ? item.remove() : '';
+                            }
+                        }
+                    })
+                }
+
+            }
+        })
     </script>
 </body>
 

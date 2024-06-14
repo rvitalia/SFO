@@ -47,7 +47,7 @@ a {
   margin-top: 48px;
   margin-bottom: 118px;
 
-  @include small-tablet{
+  @include small-tablet {
     margin-bottom: 70px;
   }
 }
@@ -73,7 +73,7 @@ a {
   text-align: center;
   cursor: pointer;
 
-  @include mobile{
+  @include mobile {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -179,10 +179,10 @@ a {
 .project__title--main {
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: clamp(30px, 4.5vw ,50px);
+  font-size: clamp(30px, 4.5vw, 50px);
   color: #fff;
 
-  @include small-tablet{
+  @include small-tablet {
     text-align: center;
   }
 
@@ -196,7 +196,7 @@ a {
 }
 
 .project__title--main {
-  font-size: clamp(45px,4.5vw,65px);
+  font-size: clamp(45px, 4.5vw, 65px);
 }
 
 
@@ -283,7 +283,8 @@ a {
     outline: none;
   }
 }
-.upp{
+
+.upp {
   text-transform: uppercase;
 }
 
@@ -300,7 +301,7 @@ a {
   transition: all 0.3s linear;
   border: 1px solid #e9eef3;
 
-  @include mobile{
+  @include mobile {
     display: block;
     width: 100%;
   }
@@ -309,5 +310,70 @@ a {
     background-color: #e9eef3;
     color: var(--accent);
     border-color: var(--accent-color);
+  }
+}
+
+.swiper-button-next {
+  & .mobile {
+    display: none;
+  }
+}
+
+@include small-tablet {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: var(--swiper-navigation-top-offset, 50%) !important;
+  }
+
+  .swiper-button-prev {
+    left: var(--swiper-navigation-sides-offset, 10px) !important;
+    right: auto !important;
+  }
+
+  .swiper-button-next {
+    width: 30px !important;
+    height: 30px !important;
+
+    background-color: var(--accent-color);
+
+
+    @include small-tablet {
+      & .desktop {
+        display: none;
+      }
+
+      & .mobile {
+        display: block;
+      }
+    }
+
+    ;
+
+
+    &::before {
+      width: 30px !important;
+      height: 30px !important;
+      display: none;
+    }
+
+    &:hover {
+      background-color: white;
+
+      &:before {
+        background-color: white;
+        border-radius: 50%;
+        background-image: none !important;
+
+      }
+
+      & svg {
+        stroke: var(--accent-color) !important;
+      }
+    }
+
+    & svg {
+      stroke: white !important;
+    }
   }
 }

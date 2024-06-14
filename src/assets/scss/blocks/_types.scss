@@ -1,6 +1,21 @@
 .swiper__types {
     padding-top: 102px;
 
+    @include small-tablet {
+        padding-top: 0;
+    }
+
+    @include mobile {
+        // padding-top: 0;
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+
+    @include small-mobile {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     & .swiper-slide {
         position: relative;
         background-position: 50%;
@@ -12,8 +27,13 @@
         max-height: 662px;
         display: flex;
         align-items: flex-end;
-        
-        & .swiper-slide__wrapper{
+
+        @include small-tablet {
+            padding-left: 13px;
+            padding-right: 13px;
+        }
+
+        & .swiper-slide__wrapper {
             display: grid;
             grid-template-rows: auto 1fr;
         }
@@ -35,9 +55,10 @@
             font-weight: 700;
             font-size: 20px;
             margin-top: auto;
-        }
-        & .swiper-slide__title{
-            // flex-grow: 1;
+
+            @include small-tablet {
+                font-size: 17px;
+            }
         }
 
         & p {
@@ -52,5 +73,9 @@
 .types {
     & .project__title {
         margin-bottom: -52px;
+
+        @include small-tablet {
+            margin-bottom: 30px;
+        }
     }
 }

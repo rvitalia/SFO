@@ -19,12 +19,33 @@
     }
 
     &>.grid-row {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
         gap: 70px;
+
+        @media (max-width: 1600px) {
+            gap: 16px;
+        }
+
+        @media (max-width: 1350px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
     }
 }
 
 .managar__inner__item {
+
+    @media (max-width: 1350px) {
+        flex: 1 0 calc(33.3% - 16px);
+    }
+    
+    @include for-desktop{
+        flex: 1 0 calc(50% - 16px);
+
+    }
+
     & .img-wrap {
         max-width: 214px;
         margin-left: auto;

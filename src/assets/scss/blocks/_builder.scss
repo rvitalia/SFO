@@ -6,6 +6,17 @@
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     gap: 30px;
+
+    @include tablet{
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    @include mobile{
+        grid-template-columns: 1fr;
+    }
 }
 
 .builder__inner__title {
@@ -15,11 +26,27 @@
     left: 47px;
     z-index: 1;
 
+    @include tablet{
+        grid-column: 2 span !important;
+        position: static;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    @include mobile{
+        grid-column: 1 !important;
+    }
+
     & p {
         font-weight: 500;
         font-size: 17px;
         color: #1c54ad;
         max-width: 349px;
+
+        @include tablet{
+            text-align: center;
+            max-width: unset;
+        }
     }
 }
 
@@ -28,14 +55,14 @@
     background: #f4f6f9;
     border-radius: 10px;
 
-    &:has(.swiper__hero__slide__link){
+    &:has(.swiper__hero__slide__link) {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: unset;
     }
 
-    & .swiper__hero__slide__link{
+    & .swiper__hero__slide__link {
         margin-left: auto;
     }
 
@@ -47,40 +74,74 @@
         display: block;
         margin-top: 4px;
         max-width: 191px;
+
+        @include small-tablet{
+            font-size: 17px;
+        }
     }
 
-    &.technology{
+    &.technology {
         grid-column: 9/12;
         grid-row: 1;
+
+        @include for-desktop {
+            grid-column: 8/12;
+        }
     }
 
-    &.examination{
+    &.examination {
         grid-column: 6/9;
         grid-row: 2;
+
+        @include for-desktop {
+            grid-column: 4/8;
+        }
     }
 
-    &.gallary{
+    &.gallary {
         grid-column: 9/12;
         grid-row: 2;
+
+        @include for-desktop {
+            grid-column: 8/12;
+        }
     }
 
-    &.partners{
+    &.partners {
         grid-column: 3/6;
         grid-row: 3;
+
+        @include for-desktop {
+            grid-column: 1/4;
+        }
     }
 
-    &.projects{
+    &.projects {
         grid-column: 6/9;
         grid-row: 3;
+
+        @include for-desktop {
+            grid-column: 4/8;
+        }
     }
 
-    &.comanda{
-        background-color:  var(--accent-color);
+    &.comanda {
+        background-color: var(--accent-color);
         grid-column: 9/12;
         grid-row: 3;
-        & h4{
+
+        @include for-desktop {
+            grid-column: 8/12;
+        }
+
+        & h4 {
             color: white;
         }
+    }
+
+    @include tablet{
+        grid-row: unset !important;
+        grid-column: unset !important;
     }
 
 }
@@ -88,4 +149,8 @@
 .builder__inner__item__img {
     max-width: 116px;
     margin-left: auto;
+
+    @include tablet{
+        max-width: 90px;
+    }
 }

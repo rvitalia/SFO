@@ -16,8 +16,8 @@
     @content;
   }
 }
-@mixin maps-object {
-  @media (max-width: (1350px)) {
+@mixin prebig-desktop {
+  @media (max-width: (1400px)) {
     @content;
   }
 }
