@@ -60,6 +60,15 @@
                     }
                 }
             });
+            const swiperManagars = new Swiper('.swiper__managars', {
+                slidesPerView: 1,      // Количество слайдов на странице
+                spaceBetween: 19,      // Отступ между слайдами в пикселях
+                loop: true,            // Включение циклического режима
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
             const jobTitleContainer = document.getElementById('job-title-container');
             const jobTitle = document.getElementById('job-title');
             const jobList = document.getElementById('job-list');

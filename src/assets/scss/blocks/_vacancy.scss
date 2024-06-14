@@ -2,27 +2,65 @@
     padding: 41px 48px 70px;
     @include bg-cover;
 
+    @include small-tablet {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
     & .grid-row:first-child {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         margin-bottom: 65px;
+
+        @include tablet{
+
+            grid-template-columns: 1fr;
+        }
 
         & h3 {
             font-family: var(--second-family);
             font-weight: 500;
             font-size: 20px;
             color: #fff;
+
+            @include small-tablet {
+                font-size: 17px;
+                text-align: center;
+            }
         }
 
         & p {
             color: #fff;
             font-size: 17px;
             margin-top: 20px;
+
+            @include small-tablet {
+                font-size: 15px;
+                text-align: center;
+            }
         }
     }
 
     & .grid-row:last-child {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 16px;
+
+        @include big-desktop {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        @media (max-width: 1270px) {
+            grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        }
+
+        @media (max-width: 1050px) {
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+        }
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
         & .vacancy__item {
             &:not(:last-child) {
@@ -41,6 +79,10 @@
                     color: #404040;
                     margin-bottom: 45px;
 
+                    @include small-tablet {
+                        font-size: 17px;
+                    }
+
                     &+p {
                         margin-top: auto;
                     }
@@ -50,6 +92,10 @@
                     font-weight: 500;
                     font-size: 17px;
                     color: #404040;
+
+                    @include small-tablet {
+                        font-size: 15px;
+                    }
                 }
             }
         }
@@ -136,7 +182,8 @@
 }
 
 .vacancy__item {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     position: relative;
 }
 
