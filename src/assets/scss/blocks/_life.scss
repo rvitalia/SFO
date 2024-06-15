@@ -20,6 +20,11 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include small-tablet{
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
     .swiper__slide__life__top {
         display: flex;
         align-items: center;
@@ -48,6 +53,10 @@
             font-size: 20px;
             color: #e9eef3;
             margin: 0;
+
+            @include small-tablet{
+                font-size: 17px;
+            }
         }
 
         & span {
@@ -55,6 +64,10 @@
             font-weight: 500;
             font-size: 17px;
             color: #e9eef3;
+
+            @include small-tablet{
+                font-size: 15px;
+            }
         }
 
         & p {

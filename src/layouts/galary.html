@@ -27,17 +27,35 @@
                     prevEl: '.swiper-button-prev',
                 },
             });
-            
-            const playButton = document.querySelector('[data-play]');
-            const iframe = document.querySelector('.embed-container iframe');
-            const originalSrc = iframe.src;
 
-            playButton.addEventListener('click', function () {
-                const parent = document.querySelector('.video__inner');
-                parent.classList.add('hide');
-                iframe.src = originalSrc + "?autoplay=1"; // Добавляем параметр autoplay для автоматического воспроизведения
-                const playButton = document.querySelector('[data-play]');
-                parent.classList.add('hide');
+            // const playButton = document.querySelector('[data-play]');
+            // const iframe = document.querySelector('.embed-container iframe');
+            // const originalSrc = iframe.src;
+
+            // playButton.addEventListener('click', function () {
+            //     const parent = document.querySelector('.video__inner');
+            //     parent.classList.add('hide');
+            //     iframe.src = originalSrc + "?autoplay=1"; // Добавляем параметр autoplay для автоматического воспроизведения
+            //     const playButton = document.querySelector('[data-play]');
+            //     parent.classList.add('hide');
+            // });
+            const playButtons = document.querySelectorAll('[data-play]');
+            // const innerWidth = document.innerWidth;
+
+
+            playButtons.forEach(playButton => {
+                playButton.addEventListener('click', function () {
+                    // Находим родительский элемент с классом video__inner
+                    const parent = playButton.closest('.video__inner');
+                    const iframe = parent.querySelector('.embed-container iframe');
+                    const originalSrc = iframe.src;
+
+                    // Добавляем класс hide к родительскому элементу
+                    parent.classList.add('hide');
+
+                    // Добавляем параметр autoplay к src iframe
+                    iframe.src = originalSrc + "?autoplay=1";
+                });
             });
         });
 

@@ -44,12 +44,16 @@ title: Документ
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="grid-row slide__works">
+
                             <div class="works__gallary__item straight">
+
                                 <div class="works__gallary__item__top"
                                     style="background-image: url(./assets/images/works/Group130.png);">
-                                    <img class="works__gallary__item__top__icon"
-                                        src="./assets/images/works/Ellipse 17.png" alt="avatar" width="138"
-                                        height="138">
+                                    <div class="img-wrap">
+                                        <img class="works__gallary__item__top__icon"
+                                            src="./assets/images/works/Ellipse 17.png" alt="avatar" width="138"
+                                            height="138">
+                                    </div>
                                     <div class="flex-row">
                                         <h3 class="h-reset">Альпийский квартал</h3>
                                         <small> от 3 млн ₽</small>
@@ -65,10 +69,12 @@ title: Документ
                                         </svg>
                                     </a>
                                 </div>
+
                                 <div class="works__gallary__item__bottom">
                                     <img src="./assets/images/works/Rectangle 51.png" alt="photo" width="507"
                                         height="197">
                                 </div>
+
                             </div>
                             <div class="works__gallary__item narrow">
                                 <img src="./assets/images/works/Rectangle 58.png" alt="photo" width="339" height="620">
@@ -190,7 +196,7 @@ title: Документ
 
 <section class="section videogallary">
     <div class="container">
-        <div class="flex-row">
+        <div class="flex-row custom-row">
             <h2 class="project__title dark h-reset">Видеогалерея</h2>
             <a href="" class="type__tile accent">Подробнее</a>
         </div>
@@ -202,24 +208,51 @@ title: Документ
                 <span class="type__tile grey over">Видео</span>
                 <h2 class="h-reset project__title">О СФО «Основа»</h2>
                 <p>Посмотрите видео о нашей компании и ее проектах</p>
+                <button class="btn-reset video__inner__play" data-play>
+                    <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M29.5 17.134C30.1667 17.5189 30.1667 18.4811 29.5 18.866L2.5 34.4545C1.83333 34.8394 0.999998 34.3583 0.999998 33.5885L1 2.41154C1 1.64174 1.83333 1.16062 2.5 1.54552L29.5 17.134Z"
+                            fill="white" stroke="#1C54AD" stroke-width="2" />
+                    </svg>
+                </button>
             </div>
-            <button class="btn-reset video__inner__play" data-play>
-                <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M29.5 17.134C30.1667 17.5189 30.1667 18.4811 29.5 18.866L2.5 34.4545C1.83333 34.8394 0.999998 34.3583 0.999998 33.5885L1 2.41154C1 1.64174 1.83333 1.16062 2.5 1.54552L29.5 17.134Z"
-                        fill="white" stroke="#1C54AD" stroke-width="2" />
-                </svg>
-            </button>
         </div>
         <div class="grid-row">
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/NaTKRraRx5A' frameborder='0' allowfullscreen></iframe>
+            <div class="video__inner">
+                <div class='embed-container'>
+                    <iframe src='https://www.youtube.com/embed/NaTKRraRx5A' frameborder='0' allowfullscreen></iframe>
+                </div>
+                <button class="btn-reset video__inner__play" data-play>
+                    <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M29.5 17.134C30.1667 17.5189 30.1667 18.4811 29.5 18.866L2.5 34.4545C1.83333 34.8394 0.999998 34.3583 0.999998 33.5885L1 2.41154C1 1.64174 1.83333 1.16062 2.5 1.54552L29.5 17.134Z"
+                            fill="white" stroke="#1C54AD" stroke-width="2" />
+                    </svg>
+                </button>
             </div>
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/NaTKRraRx5A' frameborder='0' allowfullscreen></iframe>
+            <div class="video__inner">
+                <div class='embed-container'>
+                    <iframe src='https://www.youtube.com/embed/NaTKRraRx5A' frameborder='0' allowfullscreen></iframe>
+                </div>
+                <button class="btn-reset video__inner__play" data-play>
+                    <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M29.5 17.134C30.1667 17.5189 30.1667 18.4811 29.5 18.866L2.5 34.4545C1.83333 34.8394 0.999998 34.3583 0.999998 33.5885L1 2.41154C1 1.64174 1.83333 1.16062 2.5 1.54552L29.5 17.134Z"
+                            fill="white" stroke="#1C54AD" stroke-width="2" />
+                    </svg>
+                </button>
             </div>
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/NaTKRraRx5A' frameborder='0' allowfullscreen></iframe>
+            <div class="video__inner">
+                <div class='embed-container'>
+                    <iframe src='https://www.youtube.com/embed/NaTKRraRx5A' frameborder='0' allowfullscreen></iframe>
+                </div>
+                <button class="btn-reset video__inner__play" data-play>
+                    <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M29.5 17.134C30.1667 17.5189 30.1667 18.4811 29.5 18.866L2.5 34.4545C1.83333 34.8394 0.999998 34.3583 0.999998 33.5885L1 2.41154C1 1.64174 1.83333 1.16062 2.5 1.54552L29.5 17.134Z"
+                            fill="white" stroke="#1C54AD" stroke-width="2" />
+                    </svg>
+                </button>
             </div>
         </div>
     </div>

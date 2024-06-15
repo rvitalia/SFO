@@ -1,20 +1,36 @@
+.videogallary {
+
+    & .flex-row.custom-row {
+
+        @include small-tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        & .video__inner {
+            @include mobile {
+                min-height: 346px;
+            }
+        }
+    }
+}
+
+
 .video__inner {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
 
-    @include mobile{
-        min-height: 346px;
-    }
+    &.hide {
 
-    &.hide{
-        & .video__inner__play, & .video__inner__preview{
+        & .video__inner__play,
+        & .video__inner__preview {
             opacity: 0;
             visibility: hidden;
             transform: rotateX(-90deg);
         }
-
-
     }
 }
 
@@ -34,12 +50,13 @@
     gap: 15px;
     justify-content: center;
 
-    @media (max-width: 1250px){
+    @media (max-width: 1250px) {
         align-items: center;
     }
-    @include mobile{
+
+    @include mobile {
         padding: 0;
-        min-height: 346px;
+        // min-height: 346px;
         border-radius: 10px;
         overflow: hidden;
     }
@@ -50,8 +67,18 @@
         color: #e9eef3;
         display: block;
 
-        @include tablet{
+        @include tablet {
             margin: 0;
+        }
+    }
+
+    & .project__title {
+        @media (max-width: 1350px) {
+            max-width: 450px;
+        }
+
+        @media (max-width: 1250px) {
+            max-width: unset;
         }
     }
 }
@@ -70,7 +97,7 @@
     transition: all 0.3s linear;
     transform-origin: 0 0;
 
-    @media (max-width: 1250px){
+    @media (max-width: 1250px) {
         position: static;
         transform: unset;
         display: flex;
@@ -80,10 +107,15 @@
         width: 88px;
     }
 
-    &:hover{
+    @include small-tablet {
+        height: 50px;
+        width: 50px;
+    }
+
+    &:hover {
         background-color: var(--accent-color);
 
-        & svg{
+        & svg {
             fill: white;
             stroke: white;
         }
@@ -97,12 +129,18 @@
         z-index: 120;
         transform: translate3d(-50%, -50%, 0);
 
-        @media (max-width: 1250px){
+        @media (max-width: 1250px) {
             position: static;
             transform: unset;
             margin-left: 10px;
             width: 34px;
             height: 34px;
+        }
+
+        @include small-tablet {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
         }
     }
 }

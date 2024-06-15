@@ -24,6 +24,35 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+                breakpoints: {
+                    // when window width is >= 320px
+                    100: {
+                        slidesPerView: 1,
+                        spaceBetween: 19,
+                    },
+                    430: {
+                        slidesPerView: 1,
+                        spaceBetween: 40,    
+                    },
+                    576: {
+                        slidesPerView: 1,
+                        spaceBetween: 19,
+                    },
+                    700: {
+                        spaceBetween: 19,
+                        slidesPerView: 2,
+                    },
+                    // when window width is >= 480px
+                    1150: {
+                        spaceBetween: 19,
+                        slidesPerView: 3,
+                    },
+                    // when window width is >= 640px
+                    1400: {
+                        spaceBetween: 19,
+                        slidesPerView: 4,
+                    }
+                }
         });
     </script>
     <script>

@@ -17,6 +17,12 @@
         & .embed-container{
             border-radius: 10px;
             overflow: hidden;
+
+            & + .video__inner__play{
+                @media (max-width: 1250px){
+                    display: none;
+                }
+            }
         }
     }
 }

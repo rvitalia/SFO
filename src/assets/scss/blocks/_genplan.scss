@@ -1,12 +1,21 @@
-.geoplan__inner{
+.geoplan__inner {
     display: flex;
+    // align-items: center;
     gap: 16px;
 
-    & .img-wrap{
-        width: 100%;
+    @media (max-width: 1600px) {
+        flex-wrap: wrap;
     }
 
-    & .philosophy__inner__question{
+    & .img-wrap {
+        width: 100%;
+        
+        & img{
+            width: 100%;
+        }
+    }
+
+    & .philosophy__inner__question {
         background-color: var(--accent-color);
         position: relative;
         width: 100%;
@@ -15,12 +24,16 @@
         flex-direction: column;
         justify-content: flex-end;
 
-        & form *{
+        @media (max-width: 1600px) {
+            max-width: unset;
+        }
+
+        & form * {
             position: relative;
             z-index: 2;
         }
 
-        & .genplan__svg{
+        & .genplan__svg {
             position: absolute;
             top: 50%;
             left: 0;

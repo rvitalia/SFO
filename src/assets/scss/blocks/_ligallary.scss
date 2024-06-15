@@ -8,6 +8,18 @@
         grid-template-rows: repeat(3, 1fr);
         gap: 16px;
         
+        @include prebig-desktop{
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        @include for-desktop{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include small-tablet{
+            gap: 8px;
+        }
+        
         & .masonry-grid{
             &:first-child{
                 display: grid;
@@ -15,6 +27,16 @@
                 grid-row: 3 span;
                 grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
                 gap: 16px;
+                
+                @include small-tablet{
+                    grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));   
+                    gap: 8px;
+                }
+                
+                @include prebig-desktop{
+                grid-column: 2 span;
+                }
+
 
                 & .grid-item{
                     &:nth-child(1) {
@@ -45,6 +67,11 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
                 gap: 16px;
+
+                @include small-tablet{
+                    grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));
+                    gap: 8px;   
+                }
 
                 & .grid-item{
                     &:nth-child(1) {

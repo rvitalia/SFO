@@ -2,6 +2,10 @@
     & .grid-row {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 16px;
+        
+        @include small-mobile {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
     }
 }
 
@@ -9,6 +13,11 @@
     border-radius: 10px;
     background-color: #e9eef3;
     padding: 25px;
+
+    @include small-tablet {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
 
     & .flex-row {
         justify-content: space-between;
@@ -26,13 +35,18 @@
             font-weight: 400;
             font-size: 20px;
             color: #404040;
+
+            @include small-tablet {
+                font-size: 17px;
+            }
         }
     }
-    & p{
+
+    & p {
         margin-top: 11px;
         margin-bottom: 0;
     }
-    
+
     &.--accent {
 
         & .benefits__item__title {
@@ -43,6 +57,10 @@
             font-weight: 500;
             font-size: 17px;
             color: #fff;
+
+            @include small-tablet {
+                font-size: 15px;
+            }
         }
     }
 }

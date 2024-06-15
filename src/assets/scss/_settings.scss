@@ -334,6 +334,7 @@ a {
   .swiper-button-next {
     width: 30px !important;
     height: 30px !important;
+    right: var(--swiper-navigation-sides-offset, 10px) !important;
 
     background-color: var(--accent-color);
 

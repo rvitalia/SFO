@@ -17,8 +17,14 @@
         flex-direction: column;
         justify-content: space-between;
 
-        &:nth-child(2){
-            & svg{
+        @include small-tablet{
+            padding-left: 13px;
+            padding-right: 13px;
+            align-items: center;
+        }
+
+        &:nth-child(2) {
+            & svg {
                 height: 17px;
             }
         }
@@ -30,6 +36,11 @@
             line-height: 125%;
             color: #fff;
             margin-bottom: 25px;
+
+            @include small-tablet {
+                font-size: 17px;
+                text-align: center;
+            }
         }
 
         & a {
@@ -40,6 +51,11 @@
             display: flex;
             align-items: center;
             gap: 8px;
+
+            @include small-tablet {
+                font-size: 15px;
+                text-align: center;
+            }
         }
     }
 }

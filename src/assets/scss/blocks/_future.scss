@@ -3,7 +3,9 @@
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 16px;
 
-
+    @include small-tablet{
+        grid-template-columns: 1fr;
+    }
 }
 
 .future__inner__back,
@@ -11,6 +13,11 @@
     padding: 25px 34px 100px;
     border-radius: 10px;
     overflow: hidden;
+
+    @include small-tablet{
+        padding-right: 13px;
+        padding-left: 13px;
+    }
 
     & .project__title {
         margin-bottom: 60px;
@@ -28,10 +35,19 @@
         margin-right: 110px;
         gap: 16px;
 
+        @include small-tablet{
+            margin-right: 0;
+        }
+
         & .small {
             font-family: var(--second-family);
             font-weight: 400;
             font-size: 20px;
+
+
+            @include small-tablet{
+                font-size: 17px;
+            }
         }
 
         & .line {
@@ -44,6 +60,11 @@
             font-family: var(--second-family);
             font-weight: 400;
             font-size: 50px;
+
+
+            @include small-tablet{
+                font-size: 30px;
+            }
         }
     }
 }
@@ -65,6 +86,15 @@
 
 }
 
+.future__inner{
+    & .swiper-button-next, 
+    & .swiper-button-prev{
+        @include mobile{
+            top: 85px !important;
+        }
+    }
+}
+
 .future__inner__plan {
     background: #e9eef3;
 
@@ -80,12 +110,40 @@
         color: #fff;
     }
 
+    &.--accent{
+        & .swiper-button-next{
+            @include small-tablet{
+                background-color: #fff;
+
+                & svg{
+                    stroke: var(--accent-color) !important;
+                }
+
+                &:hover{
+                    background-color: var(--accent-color);
+
+                    & svg{
+                        stroke: #fff !important;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 .future__inner__list {
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    @include small-tablet{
+        padding: 0 50px;
+    }
+
+    @include mobile{
+        padding: 0px 13px;
+    }
 
     & li {
         font-weight: 500;

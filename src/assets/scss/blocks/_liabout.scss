@@ -1,7 +1,11 @@
 .liabout {
     & .grid-row {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 16px;
+
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
     }
 
     & .liabout__item {
@@ -9,6 +13,11 @@
         border-radius: 10px;
         padding: 25px 35px;
         padding-right: 77px;
+
+        @include small-tablet{
+            padding-left: 13px;
+            padding-right: 13px;
+        }
 
         & .project__title {
             margin-bottom: 35px;
@@ -20,6 +29,11 @@
             font-size: 20px;
             line-height: 125%;
             color: #404040;
+
+            @include small-tablet{
+                font-size: 17px;
+                text-align: center;
+            }
         }
 
         & p{
@@ -27,6 +41,11 @@
             line-height: 125%;
             font-weight: 500;
             margin: 0;
+
+            @include small-tablet{
+                font-size: 15px;
+                text-align: center;
+            }
 
             & + p{
                 margin-top: 35px;

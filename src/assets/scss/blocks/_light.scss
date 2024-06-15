@@ -4,37 +4,62 @@
     border-radius: 10px;
     overflow: hidden;
 
+    @include small-tablet {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
     & .grid-row {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 16px;
+
+        @include small-tablet {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
 .light__inner__right {
     color: #fff;
 
-    & h3{
+    & h3 {
         font-family: var(--second-family);
         font-weight: 500;
         font-size: 20px;
         line-height: 125%;
         display: block;
         margin-bottom: 25px;
+
+        @include small-tablet {
+            font-size: 17px;
+            text-align: center;
+        }
     }
-    & p{
+
+    & p {
         font-size: 17px;
 
-        & b{
+        @include small-tablet {
+            font-size: 15px;
+            text-align: center;
+        }
+
+        & b {
             font-weight: 700;
         }
 
-        & + p{
+        &+p {
             margin-top: 25px;
         }
     }
 
-    & .type__tile{
+    & .type__tile {
         margin-top: 20px;
         color: var(--accent-color);
+
+        @include small-tablet{
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }
