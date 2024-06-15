@@ -3,6 +3,11 @@
     padding: 40px 47px;
     border-radius: 10px;
 
+    @include small-tablet{
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
     #breadcrumps {
         padding-left: 0;
     }
@@ -16,18 +21,36 @@
         display: flex;
         justify-content: space-between;
 
+        @include small-tablet{
+            flex-direction: column;
+            gap: 45px;
+        }
+
         & p {
             font-weight: 500;
             font-size: 17px;
             color: #fff;
 
-            & b{
+            @include small-tablet {
+                font-size: 15px;
+                text-align: center;
+            }
+
+            & b {
                 font-weight: 700;
             }
         }
 
         & p+p {
             margin-top: 20px;
+        }
+
+        & dd span{
+            @include small-tablet{
+                max-width: max-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     }
 

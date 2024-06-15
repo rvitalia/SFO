@@ -18,7 +18,7 @@
 
     & blockquote {
         position: relative;
-
+        margin: 0;
 
         &:before,
         &:after {
@@ -40,10 +40,8 @@
         &::after {
             bottom: 0;
             right: 0;
-            transform: translateX(100%);
+            transform: translateY(100%);
         }
-
-
 
         & h3 {
             font-family: var(--second-family);

@@ -3,13 +3,22 @@
     border-radius: 10px;
     padding: 35px 45px 50px;
 
+    @include small-tablet {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
     & .project__title {
         max-width: 724px;
     }
 
     & .grid-row {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+        gap: 16px;
+
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
 
         & .details__inner__item:first-child {
             justify-content: space-between;
@@ -17,11 +26,22 @@
             & h2+dl {
                 margin-top: auto;
                 margin-left: -2px;
+
+                @include small-tablet {
+                    margin-top: 28px;
+                }
             }
         }
 
         &>.flex-row {
             justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+
+            @include mobile{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
             & .details__inner__item {
                 align-items: center;
@@ -38,6 +58,10 @@
     & dl {
         gap: 15px;
 
+        @include small-tablet {
+            justify-content: center;
+        }
+
         &+dl {
             margin-top: 15px;
         }
@@ -46,6 +70,10 @@
             font-size: 17px;
             line-height: 128%;
             color: #404040;
+
+            @include small-tablet{
+                text-align: center;
+            }
         }
     }
 
@@ -66,6 +94,11 @@
         text-align: center;
         display: block;
         margin-bottom: 25px;
+
+        @include small-tablet{
+            font-size: 17px;
+            margin-bottom: 14px;
+        }
     }
 
     & p {
@@ -75,8 +108,16 @@
         color: #404040;
         display: block;
 
-        & + a{
+        @include small-tablet{
+            font-size: 15px;
+        }
+
+        &+a {
             margin-top: 50px;
+
+            @include small-tablet{
+                margin-top: 25px;
+            }
         }
     }
 
@@ -90,7 +131,11 @@
         align-items: center;
         gap: 15px;
 
-        & + a{
+        @include small-tablet{
+            font-size: 15px;
+        }
+
+        &+a {
             margin-top: 15px;
         }
     }

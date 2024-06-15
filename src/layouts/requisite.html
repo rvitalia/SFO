@@ -16,5 +16,33 @@
         <div class="overlay"></div>
     </div>
     <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const customSelectWrapper = document.querySelector('.custom-select-wrapper');
+            const customSelect = customSelectWrapper.querySelector('.custom-select');
+            const customSelectTrigger = customSelect.querySelector('.custom-select-trigger');
+            const customOptions = customSelect.querySelector('.custom-options');
+            const customOptionList = customOptions.querySelectorAll('.custom-option');
+
+            customSelectTrigger.addEventListener('click', function () {
+                customSelect.classList.toggle('active');
+            });
+
+            customOptionList.forEach(option => {
+                option.addEventListener('click', function () {
+                    customSelectTrigger.textContent = this.textContent;
+                    customSelect.classList.remove('active');
+                });
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!customSelect.contains(event.target)) {
+                    customSelect.classList.remove('active');
+                }
+            });
+        });
+
+    </script>
 </body>
+
 </html>

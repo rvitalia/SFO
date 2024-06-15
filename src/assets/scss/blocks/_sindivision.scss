@@ -64,6 +64,16 @@
         flex-direction: column;
         gap: 20px;
 
+        @media (max-width:1600px) {
+            padding-left: 13px;
+            padding-right: 13px;
+            align-items: center;
+
+            & *{
+                text-align: center;
+            }
+        }
+
         & p,
         & h3 {
             margin: 0;

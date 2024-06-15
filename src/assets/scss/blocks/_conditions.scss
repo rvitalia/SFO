@@ -3,7 +3,12 @@
     background: #e9eef3;
     border-radius: 10px;
 
-    & ul{
+    @include small-tablet {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    & ul {
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -24,13 +29,21 @@
         font-size: 17px;
         line-height: 206%;
         color: #404040;
+
+        @include small-tablet{
+            font-size: 15px;
+        }
     }
 }
 
 .conditions__inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 16px;
+    
+    @include mobile{
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
 
 
     & .flex-column {
@@ -45,4 +58,9 @@
     color: #404040;
     text-transform: capitalize;
     margin-bottom: 22px;
+
+    @include small-tablet{
+        font-size: 17px;
+        text-align: center;
+    }
 }

@@ -196,7 +196,7 @@ a {
 }
 
 .project__title--main {
-  font-size: clamp(45px, 4.5vw, 65px);
+  font-size: clamp(45px, 4.5vw, 65px) !important;
 }
 
 
