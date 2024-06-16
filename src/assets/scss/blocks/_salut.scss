@@ -1,20 +1,58 @@
 .salut__inner {
     display: grid;
-    grid-template-columns: minmax(500px, 721px) minmax(600px, 972px);
+    grid-template-columns: minmax(500px, 721px) minmax(500px, 972px);
     gap: 48px;
+
+    @include for-desktop {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
 
     & .salut__inner__item {
         background: #e9eef3;
         border-radius: 10px;
+        overflow: hidden;
+
+        &:first-child {
+
+            @include for-desktop {
+                display: flex;
+                justify-content: center;
+                background: none;
+            }
+        }
+
+        &>img {
+            height: 100%;
+            width: auto;
+
+            @include for-desktop {
+                width: 100%;
+                height: auto;
+                max-width: 600px;
+            }
+
+        }
     }
 
     & .salut__inner__item:last-child {
         padding: 41px 49px 30px;
+
+        @include mobile {
+            padding-left: 13px;
+            padding-right: 13px;
+        }
     }
 }
 
 .salut__inner__item {
+    & .project__title {
+        @include for-desktop {
+            text-align: center;
+        }
+    }
+
     & h3 {
         margin-top: 28px;
         font-family: var(--second-family);
@@ -22,10 +60,26 @@
         font-size: 20px;
         line-height: 125%;
         color: #404040;
+
+        @include for-desktop {
+            text-align: center;
+        }
+
+        @include small-tablet {
+            font-size: 17px;
+        }
     }
 
     & p {
         font-size: 17px;
+
+        @include for-desktop {
+            text-align: center;
+        }
+
+        @include small-tablet {
+            font-size: 15px;
+        }
     }
 
     & strong {
@@ -36,66 +90,117 @@
         line-height: 125%;
         color: #404040;
         margin-top: 26px;
+
+        @include for-desktop {
+            text-align: center;
+        }
+
+        @include small-tablet {
+            font-size: 17px;
+        }
     }
 
     & span {
         display: block;
         font-size: 15px;
+
+        @include for-desktop {
+            text-align: center;
+        }
     }
 }
-
-.swiper__image .swiper-slide {
-    & img {
-        width: 100%;
-        object-fit: contain;
-        max-height: 221px;
+.salut__inner{
+    .swiper__image .swiper-slide {
+        & img {
+            // width: 100%;
+            // object-fit: contain;
+            // max-height: 221px;
+            height: 100%;
+            width: auto;
+            border-radius: 10px;
+    
+            @include small-mobile {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
 }
-
-.swiper__image {
-    & .swiper-button-next {
-
-        & svg{
-            stroke: #1C54AD;
+.salut__inner{
+    .swiper__image {
+        padding-top: 77px;
+    
+        @include small-tablet {
+            padding-top: 0;
+            padding-left: 45px;
+            padding-right: 45px;
+            margin-top: 22px;
+            margin-left: -50px;
+            margin-right: -50px;
+    
+            @include mobile {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
         }
-        &::before {
-            transition: all 0.2s linear;
-            content: '';
-            z-index: 0;
-            height: 54px;
-            width: 47px;
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml,%3Csvg%20width=%2247%22%20height=%2254%22%20viewBox=%220%200%2047%2054%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M1.23828%209C5.97%204.06932%2012.6266%201%2020%201C34.3594%201%2046%2012.6406%2046%2027C46%2041.3594%2034.3594%2053%2020%2053C13.6823%2053%207.89097%2050.7467%203.3857%2047%22%20stroke=%22#1C54AD%22%20/%3E%20%3C/svg%3E');
+    
+        & .swiper-wrapper {
+            align-items: stretch;
         }
-        &:hover{
-
-            & svg{
+    
+        & .swiper-slide {
+            height: auto;
+        }
+    
+        & .swiper-button-next {
+    
+            & svg {
+                stroke: #1C54AD;
+            }
+    
+            &::before {
+                transition: all 0.2s linear;
+                content: '';
+                z-index: 0;
+                height: 54px;
+                width: 47px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-image: url('data:image/svg+xml,%3Csvg%20width=%2247%22%20height=%2254%22%20viewBox=%220%200%2047%2054%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M1.23828%209C5.97%204.06932%2012.6266%201%2020%201C34.3594%201%2046%2012.6406%2046%2027C46%2041.3594%2034.3594%2053%2020%2053C13.6823%2053%207.89097%2050.7467%203.3857%2047%22%20stroke=%22#1C54AD%22%20/%3E%20%3C/svg%3E');
+            }
+    
+            &:hover {
+    
+                & svg {
+                    stroke: white;
+                }
+    
+                &::before {
+                    background-image: url('data:image/svg+xml,%3Csvg%20width=%2252%22%20height=%2252%22%20viewBox=%220%200%2052%2052%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Ccircle%20cx=%2226%22%20cy=%2226%22%20r=%2226%22%20fill=%22#1C54AD%22%20/%3E%20%3C/svg%3E');
+                    width: 52px;
+                    height: 52px;
+                    z-index: -1;
+                }
+            }
+        }
+    
+        & .swiper-button-prev {
+            background-color: var(--accent-color);
+    
+            &:hover {
+                background-color: white;
+    
+                & svg {
+                    stroke: var(--accent-color);
+                }
+            }
+    
+            & svg {
                 stroke: white;
             }
-
-            &::before{
-                background-image: url('data:image/svg+xml,%3Csvg%20width=%2252%22%20height=%2252%22%20viewBox=%220%200%2052%2052%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Ccircle%20cx=%2226%22%20cy=%2226%22%20r=%2226%22%20fill=%22#1C54AD%22%20/%3E%20%3C/svg%3E');
-                width: 52px;
-                height: 52px;
-                z-index: -1;
-            }
-        }
-    }
-
-    & .swiper-button-prev {
-        background-color: var(--accent-color);
-        
-        &:hover{
-            background-color: white;
-            & svg{
-                stroke: var(--accent-color);
-            }        
-        }
-        & svg{
-            stroke: white;
         }
     }
 }

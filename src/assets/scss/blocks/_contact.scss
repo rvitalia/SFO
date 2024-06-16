@@ -131,3 +131,13 @@
     align-items: center;
     margin-bottom: 9px;
 }
+
+.contacts__maps, .contacts__maps iframe{
+    min-height: 532px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @include small-tablet{
+        min-height: 351px;
+    }
+}

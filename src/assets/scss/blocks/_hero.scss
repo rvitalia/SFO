@@ -1,5 +1,9 @@
 .hero__top{
     padding-left: 49px;
+
+    @include small-tablet{
+        padding-left: 0;
+    }
 }
 .header__top__title {
     font-family: var(--second-family);
@@ -12,6 +16,14 @@
     position: relative;
     margin-bottom: 30px;
 
+    @include small-tablet{
+        margin-bottom: 0;
+        padding-bottom: 15px;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     &::after {
         content: '';
         width: 64px;
@@ -21,6 +33,10 @@
         top: 100%;
         left: 0;
         z-index: 1;
+
+        @include small-tablet{
+            display: none;
+        }
     }
 
     & small {
@@ -28,11 +44,19 @@
         font-size: 49px;
         line-height: 122%;
         text-transform: lowercase;
+
+        @include small-tablet{
+            font-size: 30px;
+        }
     }
 }
 
 .hero__inner {
     @include bg-cover;
+
+    @include small-tablet{
+        background-position: 0;
+    }
 }
 
 .hero__top__desc {
@@ -40,6 +64,14 @@
     font-size: 20px;
     color: #3a4659;
     margin-bottom: 73px;
+
+    @include small-tablet{
+        font-size: 17px;
+        text-align: center;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .swiper__hero__slide {
@@ -61,6 +93,20 @@
     max-width: 1076px;
     margin-right: 49px !important;
     padding-top: 77px;
+
+    @include medium-desktop{
+        padding-left: 50px;
+    }
+
+    // @include small-tablet{
+    //     padding-left: 0;
+    // }
+
+    @include small-tablet{
+        padding-top: 0;
+        padding-right: 50px;
+        margin-right: 0 !important;
+    }
 }
 
 .swiper__hero__slide__company {
@@ -222,6 +268,30 @@
     &:after {
         content: '';
     }
+}
+.hero, .about, .life{
+    & .swiper-button-next{
+        & svg{
+            stroke: #fff;
+        }
+
+        @include small-tablet{
+            background-color: #fff;
+
+            & svg{
+                stroke: var(--accent-color) !important;
+            }
+
+            &:hover{
+                background-color: var(--accent-color);
+
+                & svg{
+                    stroke: #fff !important;
+                }
+            }
+        }
+    }
+    
 }
 
 .swiper-button-next {

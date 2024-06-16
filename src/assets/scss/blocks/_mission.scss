@@ -3,6 +3,12 @@
         @include bg-cover;
         padding: 44px;
         padding-bottom: 70px;
+        border-radius: 10px;
+
+        @include small-tablet{
+            padding-left: 13px;
+            padding-right: 13px;
+        }
 
         & * {
             color: #e9eef3;
@@ -13,15 +19,48 @@
             gap: 65px;
             margin-bottom: 120px;
 
+            @include tablet {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-bottom: 55px;
+            }
+
             & p {
                 font-weight: 500;
                 font-size: 17px;
+
+                @include tablet {
+                    margin: 0;
+                }
+
+                @include small-tablet {
+                    font-size: 15px;
+                    text-align: center;
+                }
             }
         }
 
         & .grid-row:last-child {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 65px;
+
+            @media (max-width: 1600px) {
+                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+                gap: 16px;
+            }
+
+            @media (max-width: 1300px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 65px;
+            }
+
+            @include tablet {
+                gap: 16px;
+            }
+
+            @include small-tablet{
+                grid-template-columns: 1fr;
+            }
         }
     }
 }
@@ -32,12 +71,23 @@
         font-weight: 500;
         font-size: 20px;
         max-width: 258px;
+
+        @include small-tablet{
+            font-size: 17px;
+            text-align: center;
+            max-width: unset;
+        }
     }
 
     & p {
         font-family: var(--font-family);
         font-weight: 500;
         font-size: 17px;
+
+        @include small-tablet{
+            font-size: 15px;
+            text-align: center;
+        }
     }
 }
 
@@ -47,6 +97,14 @@
     margin-bottom: 32px;
     height: 100vh;
     max-height: 69px;
+
+    @include small-tablet{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 26px;
+        padding-bottom: 26px;
+    }
 
     & img {
         max-width: 36px;

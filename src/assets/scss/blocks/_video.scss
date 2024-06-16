@@ -23,6 +23,10 @@
     border-radius: 10px;
     overflow: hidden;
 
+    @include small-mobile{
+        min-height: 342px;
+    }
+
     &.hide {
 
         & .video__inner__play,
@@ -61,6 +65,10 @@
         overflow: hidden;
     }
 
+    @include small-mobile{
+        min-height: 342px;
+    }
+
     & p {
         font-weight: 500;
         font-size: 15px;
@@ -69,6 +77,10 @@
 
         @include tablet {
             margin: 0;
+        }
+
+        @include mobile{
+            text-align: center; 
         }
     }
 
@@ -81,6 +93,12 @@
             max-width: unset;
         }
     }
+
+    // & .type__tile{
+    //     @include small-mobile{
+    //         display: none;
+    //     }
+    // }
 }
 
 .video__inner__play {

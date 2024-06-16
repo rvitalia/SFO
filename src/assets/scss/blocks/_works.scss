@@ -13,15 +13,80 @@
 }
 
 .works {
+    & .type__tile{
+        @include small-tablet{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
     & .container {
         & .flex-row {
             gap: 71px;
+
+            @media (max-width: 1250px){
+                flex-direction: column;
+                gap: 25px;
+                align-items: flex-start;
+            }
         }
     }
 
     & .project__title {
         max-width: 590px;
         margin-top: 17px;
+
+        @media (max-width: 1250px){
+            max-width: none;
+        }
+    }
+    & .swiper-button-next {
+    
+        & svg {
+            stroke: #1C54AD;
+        }
+
+        &::before {
+            transition: all 0.2s linear;
+            content: '';
+            z-index: 0;
+            height: 54px;
+            width: 47px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg%20width=%2247%22%20height=%2254%22%20viewBox=%220%200%2047%2054%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M1.23828%209C5.97%204.06932%2012.6266%201%2020%201C34.3594%201%2046%2012.6406%2046%2027C46%2041.3594%2034.3594%2053%2020%2053C13.6823%2053%207.89097%2050.7467%203.3857%2047%22%20stroke=%22#1C54AD%22%20/%3E%20%3C/svg%3E');
+        }
+
+        &:hover {
+
+            & svg {
+                stroke: white;
+            }
+
+            &::before {
+                background-image: url('data:image/svg+xml,%3Csvg%20width=%2252%22%20height=%2252%22%20viewBox=%220%200%2052%2052%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Ccircle%20cx=%2226%22%20cy=%2226%22%20r=%2226%22%20fill=%22#1C54AD%22%20/%3E%20%3C/svg%3E');
+                width: 52px;
+                height: 52px;
+                z-index: -1;
+            }
+        }
+    }
+
+    & .swiper-button-prev {
+        background-color: var(--accent-color);
+
+        &:hover {
+            background-color: white;
+
+            & svg {
+                stroke: var(--accent-color);
+            }
+        }
+
+        & svg {
+            stroke: white;
+        }
     }
 }
 
@@ -45,7 +110,8 @@
     padding-top: 77px;
 
     @include small-tablet{
-        padding-top: 30px;
+        padding-top: 0;
+        margin-top: 30px;
     }
 }
 
